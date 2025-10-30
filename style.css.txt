@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #4B0082; /* Purple */
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav button {
+    padding: 10px 20px;
+    background-color: #C0C0C0; /* Silver */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #D3D3D3;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #e6e6fa;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.features, .program-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.feature-card, .program-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+}
+
+.feature-card img, .program-card img {
+    width: 100%;
+    height: auto;
+}
+
+.feature-card h3, .program-card h3 {
+    color: #4B0082;
+    margin: 15px 0 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4B0082;
+    color: white;
+}
