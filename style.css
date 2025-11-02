@@ -18,7 +18,7 @@ header.header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: #1e1e2f; /* Dark navbar background */
+    background: #1e1e2f;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -48,7 +48,7 @@ section.hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 100vh;
     text-align: center;
     background: linear-gradient(135deg, #6a0dad, #1e90ff);
     color: #fff;
@@ -64,15 +64,19 @@ section.hero .hero-content p {
     font-size: 1.5rem;
 }
 
-/* ====== Content Sections ====== */
+/* ====== Content Cards ====== */
 section.content {
     max-width: 1000px;
-    margin: 50px auto;
+    margin: -80px auto 50px auto; /* overlap slightly with hero */
     padding: 0 20px;
 }
 
-section.content .section {
-    margin-bottom: 60px;
+section.content .card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 section.content h2 {
@@ -91,7 +95,7 @@ section.content .notes {
     margin-top: 10px;
 }
 
-/* ====== Footer (optional) ====== */
+/* ====== Footer ====== */
 footer {
     text-align: center;
     padding: 20px;
@@ -112,7 +116,7 @@ footer {
     }
 
     section.hero {
-        height: 300px;
+        height: 60vh;
     }
 
     section.hero .hero-content h1 {
