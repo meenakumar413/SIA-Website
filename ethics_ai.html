@@ -1,82 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethics in AI | SIA</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ethics in Generative AI | SIA AI Portal</title>
+  <link rel="stylesheet" href="sia-style.css" />
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header class="header">
-    <div class="logo">
-      <a href="index.html"><img src="sia-logo.png" alt="SIA Logo"></a>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="generative_ai.html">Generative AI</a>
-      <a href="ai_fundamentals.html">AI Fundamentals</a>
-      <a href="microsoft_copilot.html">Microsoft Copilot</a>
-      <a href="ai_agents.html">AI Agents</a>
-      <a href="foundational_ai_concepts.html">Foundational AI</a>
-      <a href="prompt_engineering.html">Prompt Engineering</a>
-      <a href="ethics_ai.html" class="active">Ethics</a>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html" class="active">Ethics in AI</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Ethics in AI -->
-    <p>Skills and Innovation Academy (SIA)</p>
-  </div>
-</section>
+  <main class="slides" style="margin-top:110px;">
+    <section class="slide purple">
+      <h2>Introduction to Ethics in Generative AI</h2>
+      <p>Welcome! This presentation introduces key ethical concepts and challenges in Generative AI.</p>
+    </section>
 
-  <!-- Content Section -->
-  <section class="content">
-    <div class="card">
-      <h2>Fairness and Bias</h2>
+    <section class="slide blue">
+      <h3>What Are the Ethical Concerns?</h3>
       <ul>
-        <li>Ensure AI decisions are unbiased and equitable</li>
-        <li>Identify and mitigate dataset bias</li>
+        <li>Bias in AI training data</li>
+        <li>Copyright and intellectual property issues</li>
+        <li>Misinformation and deepfake risks</li>
       </ul>
-      <p class="notes">AI should treat all users fairly, avoiding discrimination based on race, gender, or other factors.</p>
-    </div>
-    <div class="card">
-      <h2>Transparency</h2>
-      <ul>
-        <li>AI systems should be explainable</li>
-        <li>Users must understand how decisions are made</li>
-      </ul>
-      <p class="notes">Transparency builds trust and accountability in AI systems.</p>
-    </div>
-    <div class="card">
-      <h2>Privacy</h2>
-      <ul>
-        <li>Protect personal data and comply with regulations</li>
-        <li>Minimize unnecessary data collection</li>
-      </ul>
-      <p class="notes">AI systems must respect user privacy and store data securely.</p>
-    </div>
-    <div class="card">
-      <h2>Safety and Responsibility</h2>
-      <ul>
-        <li>AI should not cause harm</li>
-        <li>Developers must be accountable for AI behavior</li>
-      </ul>
-      <p class="notes">Responsible AI design ensures technology benefits society safely.</p>
-    </div>
-    <div class="card">
-      <h2>Inclusive Innovation</h2>
-      <ul>
-        <li>Consider diverse perspectives in AI development</li>
-        <li>Encourage accessibility and equity</li>
-      </ul>
-      <p class="notes">Ethical AI empowers everyone and supports social good.</p>
-    </div>
-  </section>
+      <p class="notes">Ethical challenges arise because AI can amplify biases, misuse content, or generate misleading information.</p>
+    </section>
 
+    <section class="slide purple">
+      <h3>Bias and Fairness</h3>
+      <ul>
+        <li>AI models reflect the data they are trained on</li>
+        <li>Bias can perpetuate inequality or stereotypes</li>
+        <li>Mitigation requires diverse datasets and careful evaluation</li>
+      </ul>
+      <p class="notes">Understanding bias is critical for creating fair and responsible AI systems.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Intellectual Property & Copyright</h3>
+      <ul>
+        <li>Generated content may unintentionally replicate copyrighted works</li>
+        <li>Legal frameworks are evolving to address AI-generated content</li>
+        <li>Respect for creators is essential</li>
+      </ul>
+      <p class="notes">Creators and organizations must ensure AI tools are used without infringing rights.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Transparency & Explainability</h3>
+      <ul>
+        <li>AI systems can be opaque (“black boxes”)</li>
+        <li>Users need clarity on how outputs are generated</li>
+        <li>Explainable AI helps build trust and accountability</li>
+      </ul>
+      <p class="notes">Transparency allows better oversight and understanding of AI behavior.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Social Impact</h3>
+      <ul>
+        <li>Deepfakes and misinformation</li>
+        <li>Job displacement concerns</li>
+        <li>Ethical use in marketing, education, and governance</li>
+      </ul>
+      <p class="notes">AI’s impact on society must be monitored to prevent harm and promote benefits.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Responsible Practices</h3>
+      <ul>
+        <li>Bias audits and continuous monitoring</li>
+        <li>Clear usage policies and consent</li>
+        <li>Collaboration between developers, users, and regulators</li>
+      </ul>
+      <p class="notes">Implementing responsible practices ensures AI serves society safely and ethically.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Final Takeaways</h3>
+      <ul>
+        <li>Ethics is central to AI development</li>
+        <li>Awareness of bias, copyright, and societal impact is key</li>
+        <li>Responsible AI use benefits creators, users, and communities</li>
+      </ul>
+      <p class="notes">Ethical literacy in AI empowers better decisions and safer technology deployment.</p>
+    </section>
+  </main>
 </body>
 </html>
 
