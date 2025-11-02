@@ -1,130 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introduction to AI | Skills & Innovation Academy</title>
-  <link rel="stylesheet" href="ai_fundamentals.style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Fundamentals | SIA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe680;
+    }
+
+    section {
+      margin-top: 100px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.8rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    ul li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
-
   <header>
-    <img src="logo.png" alt="SIA Logo" class="logo">
-    <h1>Introduction to Artificial Intelligence</h1>
+    <img src="sia-logo.png" alt="SIA Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="ai_fundamentals.html"><strong>AI Fundamentals</strong></a>
+      <a href="generative_ai.html">Generative AI</a>
+      <a href="copilot.html">Copilot</a>
+      <a href="ai_agents.html">AI Agents</a>
+      <a href="prompt_engineering.html">Prompt Engineering</a>
+      <a href="ethics_ai.html">Ethics in AI</a>
+    </nav>
   </header>
 
-  <main class="content">
+  <section>
+    <h1>AI Fundamentals</h1>
+    <p>Welcome to the foundation of Artificial Intelligence — where innovation begins.</p>
 
-    <!-- Slide 1 -->
-    <section class="slide purple-slide">
-      <h2>Welcome!</h2>
-      <p>This presentation covers key concepts on AI fundamentals, designed for professionals and students entering the AI space.</p>
-    </section>
+    <h2>1. What is Artificial Intelligence (AI)?</h2>
+    <ul>
+      <li>AI is the science of making machines think, learn, and act like humans.</li>
+      <li>It enables systems to analyze data, recognize patterns, and make decisions with minimal human input.</li>
+    </ul>
 
-    <!-- Slide 2 -->
-    <section class="slide blue-slide">
-      <h2>What Is Artificial Intelligence?</h2>
-      <ul>
-        <li>General vs. narrow intelligence</li>
-        <li>Strong AI vs. weak AI</li>
-        <li>The general problem-solver concept</li>
-      </ul>
-      <p class="notes">AI is the simulation of human intelligence in machines. This slide introduces foundational definitions and distinctions.</p>
-    </section>
+    <h2>2. Machine Learning (ML)</h2>
+    <ul>
+      <li>ML allows computers to learn from experience — by analyzing data and improving over time.</li>
+      <li>Examples: spam filters, recommendation systems, fraud detection.</li>
+    </ul>
 
-    <!-- Slide 3 -->
-    <section class="slide purple-slide">
-      <h2>Predictive vs. Generative AI</h2>
-      <ul>
-        <li>Predictive AI: forecasts outcomes</li>
-        <li>Generative AI: creates new content</li>
-        <li>Use cases in business and creativity</li>
-      </ul>
-      <p class="notes">Predictive AI helps with decisions, while generative AI powers tools like ChatGPT and image generators.</p>
-    </section>
+    <h2>3. Deep Learning</h2>
+    <ul>
+      <li>A specialized form of ML using neural networks that mimic the human brain’s structure.</li>
+      <li>Enables breakthroughs in speech recognition, image generation, and natural language understanding.</li>
+    </ul>
 
-    <!-- Slide 4 -->
-    <section class="slide blue-slide">
-      <h2>Machine Learning Basics</h2>
-      <ul>
-        <li>Supervised vs. unsupervised learning</li>
-        <li>Labeled and unlabeled data</li>
-        <li>Massive datasets and model training</li>
-      </ul>
-      <p class="notes">Machine learning is the engine behind AI. It learns patterns from data to make predictions or decisions.</p>
-    </section>
+    <h2>4. Natural Language Processing (NLP)</h2>
+    <ul>
+      <li>Focuses on enabling machines to understand, interpret, and generate human language.</li>
+      <li>Applications include chatbots, translation, and text summarization.</li>
+    </ul>
 
-    <!-- Slide 5 -->
-    <section class="slide purple-slide">
-      <h2>Neural Networks</h2>
-      <ul>
-        <li>Layers of nodes and weights</li>
-        <li>Activation bias and learning from mistakes</li>
-        <li>Backpropagation and accuracy improvement</li>
-      </ul>
-      <p class="notes">Neural networks simulate how the brain processes information. They’re key to deep learning systems.</p>
-    </section>
+    <h2>5. Computer Vision</h2>
+    <ul>
+      <li>Allows machines to “see” and interpret visual information from the world.</li>
+      <li>Used in self-driving cars, facial recognition, and medical imaging.</li>
+    </ul>
 
-    <!-- Slide 6 -->
-    <section class="slide blue-slide">
-      <h2>Common AI Systems</h2>
-      <ul>
-        <li>Robotics and automation</li>
-        <li>Natural language processing</li>
-        <li>Internet of Things (IoT)</li>
-      </ul>
-      <p class="notes">AI is embedded in many systems—from smart assistants to industrial robots and connected devices.</p>
-    </section>
+    <h2>6. Generative AI</h2>
+    <ul>
+      <li>Creates new content — text, images, or music — based on learned data patterns.</li>
+      <li>Examples include ChatGPT, DALL·E, and Midjourney.</li>
+    </ul>
 
-    <!-- Slide 7 -->
-    <section class="slide purple-slide">
-      <h2>Popular Algorithms</h2>
-      <ul>
-        <li>K-nearest neighbor</li>
-        <li>K-means clustering</li>
-        <li>Regression and Naive Bayes</li>
-      </ul>
-      <p class="notes">These algorithms help classify, cluster, and predict data. Each has strengths depending on the problem.</p>
-    </section>
+    <h2>7. Ethical and Responsible AI</h2>
+    <ul>
+      <li>Ensures AI systems are fair, transparent, and safe.</li>
+      <li>Reduces bias and promotes responsible innovation for the benefit of society.</li>
+    </ul>
 
-    <!-- Slide 8 -->
-    <section class="slide blue-slide">
-      <h2>Generative AI Architecture</h2>
-      <ul>
-        <li>GANs and VAEs</li>
-        <li>Transformers and LLMs</li>
-        <li>Image diffusion models</li>
-      </ul>
-      <p class="notes">Generative models create realistic outputs—text, images, and more—using advanced architectures.</p>
-    </section>
-
-    <!-- Slide 9 -->
-    <section class="slide purple-slide">
-      <h2>Ethical & Legal Challenges</h2>
-      <ul>
-        <li>Alignment problem</li>
-        <li>Decision traceability</li>
-        <li>Copyright and privacy concerns</li>
-      </ul>
-      <p class="notes">With great power comes responsibility. Ethical AI design is critical to avoid bias and misuse.</p>
-    </section>
-
-    <!-- Slide 10 -->
-    <section class="slide blue-slide">
-      <h2>Where to Go Next</h2>
-      <ul>
-        <li>Use AI systems in your workflow</li>
-        <li>Solve real-world problems</li>
-        <li>Earn certifications and keep learning</li>
-      </ul>
-      <p class="notes">Whether you're a student or executive, AI skills are increasingly valuable. Keep exploring and applying.</p>
-    </section>
-
-  </main>
+    <h2>8. The Future of AI</h2>
+    <ul>
+      <li>AI is transforming every field — from education and healthcare to business and creativity.</li>
+      <li>Building foundational knowledge today prepares learners for the intelligent systems of tomorrow.</li>
+    </ul>
+  </section>
 
   <footer>
-    <p>© 2025 Skills & Innovation Academy (SIA)</p>
+    <p>© 2025 Skills and Innovation Academy | Shaping the Future with AI</p>
   </footer>
 </body>
 </html>
-
