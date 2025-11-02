@@ -1,187 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Fundamentals | SIA</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #6a0dad, #1e90ff);
-            color: #fff;
-            scroll-behavior: smooth; /* enables smooth scrolling */
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: rgba(0, 0, 0, 0.4);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .slide {
-            padding: 80px 20px;
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h1 { font-size: 3rem; margin-bottom: 20px; text-align: center; }
-        h2 { font-size: 2rem; margin-bottom: 15px; text-align: center; }
-        ul { font-size: 1.2rem; margin-bottom: 20px; }
-        .notes { font-size: 1rem; font-style: italic; margin-top: 10px; text-align: center; max-width: 700px; }
-
-        .logo { position: absolute; width: 100px; }
-        .top-right { top: 20px; right: 20px; }
-        .top-left { top: 20px; left: 20px; }
-        .bottom-right { bottom: 20px; right: 20px; }
-        .bottom-left { bottom: 20px; left: 20px; }
-
-        .slide:nth-child(odd) { background: linear-gradient(135deg, #6a0dad, #1e90ff); }
-        .slide:nth-child(even) { background: linear-gradient(135deg, #1e90ff, #6a0dad); }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.5rem; }
-            ul { font-size: 1rem; }
-            .logo { width: 70px; }
-            nav { padding: 10px 20px; }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Fundamentals | SIA AI Portal</title>
+  <link rel="stylesheet" href="sia-style.css" />
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="index.html"><img src="SIA-logo.png" alt="SIA Logo" style="width:80px;"></a>
-        <div>
-            <a href="#slide1">AI Fundamentals</a>
-            <a href="#slide2">What is AI?</a>
-            <a href="#slide3">Machine Learning</a>
-            <a href="#slide4">Deep Learning</a>
-            <a href="#slide5">NLP</a>
-            <a href="#slide6">Computer Vision</a>
-            <a href="#slide7">Generative AI</a>
-            <a href="#slide8">Ethical AI</a>
-            <a href="#slide9">The Future</a>
-        </div>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html" class="active">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Slide 1 -->
-    <section id="slide1" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo top-right">
-        <h1>AI Fundamentals</h1>
-        <h2>Skills and Innovation Academy (SIA)</h2>
-        <p class="notes">Welcome to AI Fundamentals—your starting point for understanding how intelligent systems are shaping the future.</p>
-    </section>
 
-    <!-- Slide 2 -->
-    <section id="slide2" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-right">
-        <h2>Defining AI</h2>
-        <ul>
-            <li>AI enables machines to think, learn, and act like humans</li>
-            <li>It analyzes data, recognizes patterns, and makes decisions</li>
-        </ul>
-        <p class="notes">AI is the science of building systems that mimic human intelligence and automate decision-making.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero purple-gradient">
+    <div class="hero-content">
+      <h1>AI Fundamentals</h1>
+      <p>Skills and Innovation Academy (SIA)</p>
+    </div>
+  </section>
 
-    <!-- Slide 3 -->
-    <section id="slide3" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo top-left">
-        <h2>Learning from Experience</h2>
-        <ul>
-            <li>ML allows computers to improve over time</li>
-            <li>Examples: spam filters, recommendation engines, fraud detection</li>
-        </ul>
-        <p class="notes">ML is a subset of AI that learns from data—without being explicitly programmed.</p>
-    </section>
+  <!-- Content Sections -->
+  <section class="content">
+    <div class="section">
+      <h2>Defining AI</h2>
+      <ul>
+        <li>AI enables machines to think, learn, and act like humans</li>
+        <li>It analyzes data, recognizes patterns, and makes decisions</li>
+      </ul>
+      <p class="notes">AI is the science of building systems that mimic human intelligence and automate decision-making.</p>
+    </div>
 
-    <!-- Slide 4 -->
-    <section id="slide4" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-left">
-        <h2>Neural Networks in Action</h2>
-        <ul>
-            <li>Uses layered neural networks inspired by the human brain</li>
-            <li>Powers speech recognition, image generation, and NLP</li>
-        </ul>
-        <p class="notes">Deep learning enables breakthroughs in understanding language, images, and sound.</p>
-    </section>
+    <div class="section">
+      <h2>Machine Learning (ML)</h2>
+      <ul>
+        <li>ML allows computers to improve over time</li>
+        <li>Examples: spam filters, recommendation engines, fraud detection</li>
+      </ul>
+      <p class="notes">ML is a subset of AI that learns from data—without being explicitly programmed.</p>
+    </div>
 
-    <!-- Slide 5 -->
-    <section id="slide5" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo top-right">
-        <h2>Understanding Human Language</h2>
-        <ul>
-            <li>NLP helps machines interpret and generate text</li>
-            <li>Applications: chatbots, translation, summarization</li>
-        </ul>
-        <p class="notes">NLP bridges the gap between human communication and machine understanding.</p>
-    </section>
+    <div class="section">
+      <h2>Deep Learning</h2>
+      <ul>
+        <li>Uses layered neural networks inspired by the human brain</li>
+        <li>Powers speech recognition, image generation, and NLP</li>
+      </ul>
+      <p class="notes">Deep learning enables breakthroughs in understanding language, images, and sound.</p>
+    </div>
 
-    <!-- Slide 6 -->
-    <section id="slide6" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-right">
-        <h2>Teaching Machines to See</h2>
-        <ul>
-            <li>Enables interpretation of visual data</li>
-            <li>Used in facial recognition, self-driving cars, medical imaging</li>
-        </ul>
-        <p class="notes">Computer vision allows machines to extract meaning from images and video.</p>
-    </section>
+    <div class="section">
+      <h2>Natural Language Processing (NLP)</h2>
+      <ul>
+        <li>NLP helps machines interpret and generate text</li>
+        <li>Applications: chatbots, translation, summarization</li>
+      </ul>
+      <p class="notes">NLP bridges the gap between human communication and machine understanding.</p>
+    </div>
 
-    <!-- Slide 7 -->
-    <section id="slide7" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo top-left">
-        <h2>Creating New Content</h2>
-        <ul>
-            <li>Generates text, images, music, and more</li>
-            <li>Examples: ChatGPT, DALL·E, Midjourney</li>
-        </ul>
-        <p class="notes">Generative AI learns patterns and creates original outputs based on training data.</p>
-    </section>
+    <div class="section">
+      <h2>Computer Vision</h2>
+      <ul>
+        <li>Enables interpretation of visual data</li>
+        <li>Used in facial recognition, self-driving cars, medical imaging</li>
+      </ul>
+      <p class="notes">Computer vision allows machines to extract meaning from images and video.</p>
+    </div>
 
-    <!-- Slide 8 -->
-    <section id="slide8" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-left">
-        <h2>Designing for Good</h2>
-        <ul>
-            <li>Promotes fairness, transparency, and safety</li>
-            <li>Reduces bias and supports responsible innovation</li>
-        </ul>
-        <p class="notes">Ethics in AI ensures that technology benefits society and respects human values.</p>
-    </section>
+    <div class="section">
+      <h2>Generative AI</h2>
+      <ul>
+        <li>Generates text, images, music, and more</li>
+        <li>Examples: ChatGPT, DALL·E, Midjourney</li>
+      </ul>
+      <p class="notes">Generative AI learns patterns and creates original outputs based on training data.</p>
+    </div>
 
-    <!-- Slide 9 -->
-    <section id="slide9" class="slide">
-        <img src="SIA-logo.png" alt="SIA Logo" class="logo top-right">
-        <h2>Transforming Every Industry</h2>
-        <ul>
-            <li>AI is reshaping education, healthcare, business, and creativity</li>
-            <li>Foundational knowledge prepares learners for tomorrow</li>
-        </ul>
-        <p class="notes">AI is everywhere—learning its fundamentals empowers you to lead and innovate.</p>
-    </section>
+    <div class="section">
+      <h2>Ethical and Responsible AI</h2>
+      <ul>
+        <li>Promotes fairness, transparency, and safety</li>
+        <li>Reduces bias and supports responsible innovation</li>
+      </ul>
+      <p class="notes">Ethics in AI ensures that technology benefits society and respects human values.</p>
+    </div>
+
+    <div class="section">
+      <h2>The Future of AI</h2>
+      <ul>
+        <li>AI is reshaping education, healthcare, business, and creativity</li>
+        <li>Foundational knowledge prepares learners for tomorrow</li>
+      </ul>
+      <p class="notes">AI is everywhere—learning its fundamentals empowers you to lead and innovate.</p>
+    </div>
+  </section>
 
 </body>
 </html>
