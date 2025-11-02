@@ -6,15 +6,14 @@
     <title>AI Fundamentals | SIA</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Page-wide gradient background */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #6a0dad, #1e90ff);
             color: #fff;
+            scroll-behavior: smooth; /* enables smooth scrolling */
         }
 
-        /* Navigation Bar */
         nav {
             display: flex;
             justify-content: space-between;
@@ -37,7 +36,6 @@
             text-decoration: underline;
         }
 
-        /* Slide sections */
         .slide {
             padding: 80px 20px;
             position: relative;
@@ -48,47 +46,20 @@
             align-items: center;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+        h1 { font-size: 3rem; margin-bottom: 20px; text-align: center; }
+        h2 { font-size: 2rem; margin-bottom: 15px; text-align: center; }
+        ul { font-size: 1.2rem; margin-bottom: 20px; }
+        .notes { font-size: 1rem; font-style: italic; margin-top: 10px; text-align: center; max-width: 700px; }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        ul {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .notes {
-            font-size: 1rem;
-            font-style: italic;
-            margin-top: 10px;
-            text-align: center;
-            max-width: 700px;
-        }
-
-        /* Logo positioning */
-        .logo {
-            position: absolute;
-            width: 100px;
-        }
-
+        .logo { position: absolute; width: 100px; }
         .top-right { top: 20px; right: 20px; }
         .top-left { top: 20px; left: 20px; }
         .bottom-right { bottom: 20px; right: 20px; }
         .bottom-left { bottom: 20px; left: 20px; }
 
-        /* Alternate slide gradient */
         .slide:nth-child(odd) { background: linear-gradient(135deg, #6a0dad, #1e90ff); }
         .slide:nth-child(even) { background: linear-gradient(135deg, #1e90ff, #6a0dad); }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             h2 { font-size: 1.5rem; }
@@ -104,14 +75,20 @@
     <nav>
         <a href="index.html"><img src="SIA-logo.png" alt="SIA Logo" style="width:80px;"></a>
         <div>
-            <a href="index.html">Home</a>
-            <a href="generative_ai.html">Generative AI</a>
-            <a href="ai_fundamentals.html">AI Fundamentals</a>
+            <a href="#slide1">AI Fundamentals</a>
+            <a href="#slide2">What is AI?</a>
+            <a href="#slide3">Machine Learning</a>
+            <a href="#slide4">Deep Learning</a>
+            <a href="#slide5">NLP</a>
+            <a href="#slide6">Computer Vision</a>
+            <a href="#slide7">Generative AI</a>
+            <a href="#slide8">Ethical AI</a>
+            <a href="#slide9">The Future</a>
         </div>
     </nav>
 
     <!-- Slide 1 -->
-    <section class="slide">
+    <section id="slide1" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo top-right">
         <h1>AI Fundamentals</h1>
         <h2>Skills and Innovation Academy (SIA)</h2>
@@ -119,7 +96,7 @@
     </section>
 
     <!-- Slide 2 -->
-    <section class="slide">
+    <section id="slide2" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-right">
         <h2>Defining AI</h2>
         <ul>
@@ -130,7 +107,7 @@
     </section>
 
     <!-- Slide 3 -->
-    <section class="slide">
+    <section id="slide3" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo top-left">
         <h2>Learning from Experience</h2>
         <ul>
@@ -141,7 +118,7 @@
     </section>
 
     <!-- Slide 4 -->
-    <section class="slide">
+    <section id="slide4" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-left">
         <h2>Neural Networks in Action</h2>
         <ul>
@@ -152,7 +129,7 @@
     </section>
 
     <!-- Slide 5 -->
-    <section class="slide">
+    <section id="slide5" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo top-right">
         <h2>Understanding Human Language</h2>
         <ul>
@@ -163,7 +140,7 @@
     </section>
 
     <!-- Slide 6 -->
-    <section class="slide">
+    <section id="slide6" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-right">
         <h2>Teaching Machines to See</h2>
         <ul>
@@ -174,7 +151,7 @@
     </section>
 
     <!-- Slide 7 -->
-    <section class="slide">
+    <section id="slide7" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo top-left">
         <h2>Creating New Content</h2>
         <ul>
@@ -185,7 +162,7 @@
     </section>
 
     <!-- Slide 8 -->
-    <section class="slide">
+    <section id="slide8" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo bottom-left">
         <h2>Designing for Good</h2>
         <ul>
@@ -196,7 +173,7 @@
     </section>
 
     <!-- Slide 9 -->
-    <section class="slide">
+    <section id="slide9" class="slide">
         <img src="SIA-logo.png" alt="SIA Logo" class="logo top-right">
         <h2>Transforming Every Industry</h2>
         <ul>
