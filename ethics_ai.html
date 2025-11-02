@@ -1,66 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ethics in Generative AI | SIA</title>
-  <link rel="stylesheet" href="css/style_ethics_generative_ai.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe680;
+    }
+
+    section {
+      margin-top: 100px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.8rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    ul li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="images/sia_logo.png" alt="SIA Logo" class="logo">
-    <h1>Ethics in Generative AI</h1>
-    <p class="subtitle">Generative AI & Ethics: The Urgency of Now</p>
+    <img src="sia-logo.png" alt="SIA Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="ai_fundamentals.html">AI Fundamentals</a>
+      <a href="generative_ai.html">Generative AI</a>
+      <a href="copilot.html">Copilot</a>
+      <a href="ai_agents.html">AI Agents</a>
+      <a href="prompt_engineering.html">Prompt Engineering</a>
+      <a href="ethics_ai.html"><strong>Ethics in AI</strong></a>
+    </nav>
   </header>
 
-  <section class="intro">
-    <p>This module explores how generative artificial intelligence (Gen AI) raises new ethical challenges and how organisations can respond responsibly. Based on the LinkedIn Learning course by Vilas Dhar, it empowers learners to analyse, plan and lead with ethics at the centre of generative AI deployment.</p>
-  </section>
+  <section>
+    <h1>Ethics in Generative AI</h1>
+    <p>Exploring the responsibilities, challenges, and best practices for ethical use of Generative AI.</p>
 
-  <section class="topics">
-    <div class="topic-card">
-      <h2>1. Why Ethics Matters in Gen AI</h2>
-      <p>As tools gain creative ability, they also raise questions of fairness, ownership, bias, accountability and human values.</p>
-    </div>
+    <h2>1. Understanding Ethical AI</h2>
+    <ul>
+      <li>AI ethics ensures fairness, transparency, and accountability.</li>
+      <li>Developers must consider bias, privacy, and data use in model design.</li>
+    </ul>
 
-    <div class="topic-card">
-      <h2>2. Ethical Analysis for AI</h2>
-      <p>Learn frameworks for distinguishing where responsibility lies: with design, data, leadership or stakeholders.</p>
-    </div>
+    <h2>2. Common Ethical Challenges</h2>
+    <ul>
+      <li><strong>Bias & Discrimination:</strong> Models may amplify societal biases.</li>
+      <li><strong>Privacy:</strong> Sensitive information can be unintentionally generated.</li>
+      <li><strong>Copyright:</strong> Use of copyrighted data raises ownership concerns.</li>
+      <li><strong>Misinformation:</strong> Generative AI can produce convincing but false content.</li>
+    </ul>
 
-    <div class="topic-card">
-      <h2>3. Organising Your Organisation for Ethical AI</h2>
-      <p>From data governance to C-Suite strategy and board oversight — see how ethics needs to live across the organisation.</p>
-    </div>
+    <h2>3. Responsible AI Principles</h2>
+    <ul>
+      <li>Transparency in training data and decision-making processes.</li>
+      <li>Human oversight to guide AI outputs responsibly.</li>
+      <li>Clear labeling of AI-generated content.</li>
+      <li>Developing inclusive datasets for fairness.</li>
+    </ul>
 
-    <div class="topic-card">
-      <h2>4. Stakeholders & Engagement</h2>
-      <p>Including your customers, users and broader society in how Gen AI is designed and deployed builds trust and resilience.</p>
-    </div>
+    <h2>4. Global Initiatives</h2>
+    <ul>
+      <li>EU AI Act focuses on risk-based regulation.</li>
+      <li>UNESCO and OECD promote responsible AI development.</li>
+      <li>Corporate frameworks like Google’s AI Principles and Microsoft’s Responsible AI.</li>
+    </ul>
 
-    <div class="topic-card">
-      <h2>5. Continuous Ethical Mindset</h2>
-      <p>Ethics isn’t a one-off task — it’s a continuous practice of review, adaptation and questioning.</p>
-    </div>
-
-    <div class="topic-card">
-      <h2>6. Key Ethical Themes</h2>
-      <p>Transparency, accountability, fairness, privacy, security, human-centric values and inclusion are core to responsible Gen AI.</p>
-    </div>
-
-    <div class="topic-card">
-      <h2>7. Organisational Alignment</h2>
-      <p>Ethical AI aligns business strategy, technology choices and social purpose — ensuring Gen AI adds value responsibly.</p>
-    </div>
-
-    <div class="topic-card">
-      <h2>8. Putting Ethics into Practice</h2>
-      <p>Use tools, governance, stakeholder feedback and education to embed ethics into your AI lifecycle.</p>
-    </div>
+    <h2>5. The Path Forward</h2>
+    <ul>
+      <li>AI ethics is a shared responsibility across engineers, educators, and policymakers.</li>
+      <li>Focus on trust, safety, and equitable access to AI benefits.</li>
+    </ul>
   </section>
 
   <footer>
-    <p>© 2025 Skills and Innovation Academy (SIA)</p>
+    <p>© 2025 Skills and Innovation Academy | Building a Responsible AI Future</p>
   </footer>
 </body>
 </html>
