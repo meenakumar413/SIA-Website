@@ -39,4 +39,17 @@ header.header nav a {
 }
 
 header.header nav a:hover,
-heade
+header
+
+/* ====== Hero Section (Purple-Blue Gradient) ====== */
+section.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* full viewport height */
+    text-align: center;
+    background: linear-gradient(135deg, #6a0dad, #1e90ff); /* purple to blue */
+    color: #fff;
+    padding: 0 20px;
+}
+
