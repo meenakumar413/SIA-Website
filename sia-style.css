@@ -1,156 +1,164 @@
-/* --- GLOBAL STYLES --- */
-body, html {
-  margin: 0;
-  padding: 0;
+/* ================================
+   Skills & Innovation Academy (SIA)
+   Unified Purple-Blue Slide Theme
+   Replace the contents of sia-style.css with this file.
+   ================================ */
+
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ---- Reset / Base ---- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
   font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+  color: #fff;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
-nav {
-  background: rgba(17, 24, 39, 0.95);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5%;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-nav .logo {
-  display: flex;
-  align-items: center;
-}
-
-nav .logo img {
-  height: 50px;
-  margin-right: 10px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #a855f7;
-}
-
-/* --- SLIDES --- */
+/* ---- Global container for slides so each page uses same look ---- */
 .slides {
   width: 100%;
   margin: 0;
-  padding-top: 80px; /* keeps content below navbar */
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
+/* ---- Slide sections ---- */
 .slide {
+  min-height: 100vh;                /* full-screen feel */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 80px 10%;
-  color: white;
+  padding: 80px 8%;
   text-align: center;
-  transition: all 0.8s ease-in-out;
+  transition: background 0.6s ease, transform 0.3s ease;
 }
 
+/* Alternating color themes for slides */
 .slide.purple {
-  background: linear-gradient(135deg, #6b00d7, #a855f7);
+  background: linear-gradient(135deg, #6b00d7 0%, #8a2be2 60%);
 }
-
 .slide.blue {
-  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  background: linear-gradient(135deg, #2575fc 0%, #4db8ff 60%);
 }
 
-/* --- HEADINGS --- */
-.slide h2 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
+/* Ensure inner slide content is readable and not full-bleed boxes */
+.slide > * { max-width: 1100px; }
 
+/* Headings */
+.slide h1, .slide h2 {
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
 .slide h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.slide p {
-  font-size: 1.2rem;
-  max-width: 900px;
-  line-height: 1.8;
-}
-
-/* --- TABLE --- */
-table {
-  border-collapse: collapse;
-  width: 80%;
-  max-width: 800px;
-  margin-top: 30px;
-}
-
-th, td {
-  border: 1px solid #ffffff66;
-  padding: 12px 16px;
-  text-align: left;
-  font-size: 1rem;
-}
-
-th {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* --- BUTTONS --- */
-.cta-button {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: white;
-  color: #4f46e5;
-  padding: 12px 24px;
-  border-radius: 30px;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: 12px;
   font-weight: 600;
+}
+.slide p, .slide ul, .slide ol {
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 14px;
+}
+
+/* Lists */
+.slide ul { list-style: none; padding-left: 0; }
+.slide ul li { margin: 8px 0; }
+
+/* Speaker notes style */
+.notes {
+  margin-top: 12px;
+  font-style: italic;
+  opacity: 0.95;
+  color: rgba(255,255,255,0.92);
+}
+
+/* ---- Navbar (override any previous black backgrounds) ---- */
+header, nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+  background: rgba(0,0,0,0.25);    /* semi-transparent to show gradient under */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 6%;
+}
+.logo img { height: 54px; display: block; }
+
+/* Nav links */
+.nav-links { list-style: none; display:flex; gap:18px; align-items:center; margin:0; padding:0; }
+.nav-links a {
+  color: #fff;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
 }
+.nav-links a:hover { background: rgba(255,255,255,0.08); color: #ffdd57; }
+.nav-links a.active { background: rgba(255,255,255,0.06); color: #ffdd57; }
 
-.cta-button:hover {
-  transform: scale(1.05);
-  background-color: #f3f4f6;
-}
-
-/* --- BACK TO HOME --- */
-.back-home {
-  margin-top: 40px;
-}
-
-.back-home a {
-  background-color: white;
-  color: #4f46e5;
+/* ---- Call-to-action buttons ---- */
+.cta-button, .program-link {
+  display: inline-block;
+  background: #ffffff;
+  color: #2b2b7a;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 28px;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+  transition: transform .15s ease, background .15s;
 }
+.cta-button:hover, .program-link:hover { transform: translateY(-3px); background: #f3f4f6; }
 
-.back-home a:hover {
-  background-color: #f3f4f6;
+/* Back to home area */
+.back-home { margin-top: 36px; text-align:center; }
+
+/* ---- Program grid (index page cards) ---- */
+.programs { padding: 60px 6%; max-width:1200px; margin: 0 auto; }
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
 }
+.program-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.program-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+.program-card h3 { color:#ffdd57; margin-top:0; }
+.program-card ul { margin-top:8px; padding-left: 18px; color: #fff; }
 
-/* --- FOOTER --- */
+/* ---- Footer ---- */
 footer {
-  background-color: #111827;
-  color: #9ca3af;
+  margin-top: 40px;
+  padding: 22px 6%;
+  background: rgba(0,0,0,0.30);
+  color: #f0f0f0;
   text-align: center;
-  padding: 25px;
-  font-size: 0.9rem;
+}
+
+/* ---- Responsive tweaks ---- */
+@media (max-width: 900px) {
+  .nav-links { gap: 12px; font-size: 14px; }
+  .slide { padding: 60px 6%; }
+  .program-card { padding: 18px; }
 }
