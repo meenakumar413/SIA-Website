@@ -1,164 +1,241 @@
-/* ================================
-   Skills & Innovation Academy (SIA)
-   Unified Purple-Blue Slide Theme
-   Replace the contents of sia-style.css with this file.
-   ================================ */
-
-/* Import font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-/* ---- Reset / Base ---- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+/* =========================
+   Global Styles
+========================= */
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-}
-
-/* ---- Global container for slides so each page uses same look ---- */
-.slides {
-  width: 100%;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-attachment: fixed;
 }
 
-/* ---- Slide sections ---- */
-.slide {
-  min-height: 100vh;                /* full-screen feel */
+/* =========================
+   Navbar
+========================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.navbar .logo img {
+  height: 55px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #ffdd57;
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero-section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 8%;
   text-align: center;
-  transition: background 0.6s ease, transform 0.3s ease;
+  padding: 2rem;
+  margin-top: 100px; /* space below fixed navbar */
 }
 
-/* Alternating color themes for slides */
-.slide.purple {
-  background: linear-gradient(135deg, #6b00d7 0%, #8a2be2 60%);
-}
-.slide.blue {
-  background: linear-gradient(135deg, #2575fc 0%, #4db8ff 60%);
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-/* Ensure inner slide content is readable and not full-bleed boxes */
-.slide > * { max-width: 1100px; }
-
-/* Headings */
-.slide h1, .slide h2 {
-  font-size: clamp(1.6rem, 3.5vw, 3rem);
-  margin-bottom: 16px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-.slide h3 {
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-.slide p, .slide ul, .slide ol {
-  font-size: clamp(1rem, 1.7vw, 1.15rem);
-  color: rgba(255,255,255,0.95);
-  margin-bottom: 14px;
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
 }
 
-/* Lists */
-.slide ul { list-style: none; padding-left: 0; }
-.slide ul li { margin: 8px 0; }
-
-/* Speaker notes style */
-.notes {
-  margin-top: 12px;
-  font-style: italic;
-  opacity: 0.95;
-  color: rgba(255,255,255,0.92);
-}
-
-/* ---- Navbar (override any previous black backgrounds) ---- */
-header, nav.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1200;
-  background: rgba(0,0,0,0.25);    /* semi-transparent to show gradient under */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 6%;
-}
-.logo img { height: 54px; display: block; }
-
-/* Nav links */
-.nav-links { list-style: none; display:flex; gap:18px; align-items:center; margin:0; padding:0; }
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-links a:hover { background: rgba(255,255,255,0.08); color: #ffdd57; }
-.nav-links a.active { background: rgba(255,255,255,0.06); color: #ffdd57; }
-
-/* ---- Call-to-action buttons ---- */
-.cta-button, .program-link {
+.cta-button {
   display: inline-block;
-  background: #ffffff;
-  color: #2b2b7a;
-  padding: 10px 20px;
-  border-radius: 28px;
-  font-weight: 700;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #ffdd57;
+  color: #1a1a1a;
   text-decoration: none;
-  transition: transform .15s ease, background .15s;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: transform 0.3s;
 }
-.cta-button:hover, .program-link:hover { transform: translateY(-3px); background: #f3f4f6; }
 
-/* Back to home area */
-.back-home { margin-top: 36px; text-align:center; }
+.cta-button:hover {
+  transform: scale(1.05);
+}
 
-/* ---- Program grid (index page cards) ---- */
-.programs { padding: 60px 6%; max-width:1200px; margin: 0 auto; }
+/* =========================
+   Slides / Presentation
+========================= */
+.slides {
+  margin-top: 120px;
+  padding: 2rem;
+}
+
+.slide {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.slide h2, .slide h3 {
+  margin-top: 0;
+}
+
+.slide.purple {
+  border-left: 5px solid #d177ff;
+}
+
+.slide.blue {
+  border-left: 5px solid #4db8ff;
+}
+
+.slide p, .slide ul {
+  margin: 10px 0;
+}
+
+.slide ul {
+  padding-left: 20px;
+}
+
+.slide ul li {
+  margin-bottom: 8px;
+}
+
+/* =========================
+   Program Cards (on Index) 
+========================= */
+.programs {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .program-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
 }
+
 .program-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   padding: 20px;
   text-align: left;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform 0.3s, background 0.3s;
 }
-.program-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
-.program-card h3 { color:#ffdd57; margin-top:0; }
-.program-card ul { margin-top:8px; padding-left: 18px; color: #fff; }
 
-/* ---- Footer ---- */
-footer {
-  margin-top: 40px;
-  padding: 22px 6%;
-  background: rgba(0,0,0,0.30);
+.program-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.program-card h3 {
+  margin-top: 0;
+}
+
+.program-link {
+  color: #ffdd57;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   Contact Section
+========================= */
+.contact-card {
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-email {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #ffdd57;
+}
+
+/* =========================
+   Back to Home Button
+========================= */
+.cta-button-back {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 12px 30px;
+  background-color: #ffdd57;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.cta-button-back:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   Typography
+========================= */
+h2 {
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
   color: #f0f0f0;
-  text-align: center;
 }
 
-/* ---- Responsive tweaks ---- */
-@media (max-width: 900px) {
-  .nav-links { gap: 12px; font-size: 14px; }
-  .slide { padding: 60px 6%; }
-  .program-card { padding: 18px; }
+/* =========================
+   Footer
+========================= */
+footer {
+  margin-top: 80px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 0.9em;
 }
