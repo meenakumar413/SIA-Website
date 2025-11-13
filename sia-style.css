@@ -1,128 +1,138 @@
-/* === Skills and Innovation Academy (SIA) Unified Styling === */
-
-/* Reset and General Layout */
-* {
+/* =========================
+   Global Styles
+========================= */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
   font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #4b0082, #1e90ff);
-  min-height: 100vh;
+  color: white;
+  text-align: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-attachment: fixed;
 }
 
-/* Navbar */
-.navbar {
+/* =========================
+   Navbar
+========================= */
+header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  z-index: 1000;
-  backdrop-filter: blur(8px);
+  width: 90%;
+  margin: 0 auto;
 }
 
-.logo img {
-  height: 50px;
+.navbar .logo img {
+  height: 55px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links li a {
-  color: #fff;
+.nav-links a {
+  color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: #00bfff;
+.nav-links a:hover,
+.nav-links .active {
+  color: #ffdd57;
 }
 
-/* Slides Layout */
-.slides {
-  margin-top: 110px;
-}
-
-.slide {
-  min-height: 100vh;
-  padding: 100px 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* =========================
+   Hero Section
+========================= */
+.hero-section {
   text-align: center;
 }
 
-.slide.purple {
-  background: linear-gradient(135deg, #4b0082, #1e90ff);
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.slide.blue {
-  background: linear-gradient(135deg, #1e90ff, #4b0082);
-}
-
-.slide h2,
-.slide h3 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.slide ul {
-  list-style: none;
-  margin: 20px 0;
+.hero-section p {
   font-size: 1.2rem;
-}
-
-.slide li {
-  margin: 10px 0;
-}
-
-.notes {
-  font-size: 1rem;
-  margin-top: 20px;
-  opacity: 0.85;
-  max-width: 800px;
-}
-
-/* Back to Home Button */
-.back-home {
-  background: linear-gradient(135deg, #1e90ff, #4b0082);
-  text-align: center;
-  padding: 60px 0;
+  max-width: 700px;
+  margin: 0 auto 20px;
 }
 
 .cta-button {
   display: inline-block;
-  background: #00bfff;
-  color: white;
-  padding: 12px 30px;
+  background: #ffdd57;
+  color: #000;
+  padding: 12px 28px;
   border-radius: 30px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #007acc;
+  background: #fff;
+  transform: scale(1.05);
 }
 
-/* Footer */
+/* =========================
+   Slides / Presentation
+========================= */
+.slides {
+  margin-top: 120px;
+  padding: 2rem;
+}
+
+.slide {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.slide.purple {
+  border-left: 5px solid #d177ff;
+}
+
+.slide.blue {
+  border-left: 5px solid #4db8ff;
+}
+
+/* =========================
+   Typography
+========================= */
+h2 {
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  color: #f0f0f0;
+}
+
+/* =========================
+   Footer
+========================= */
 footer {
-  background: rgba(0, 0, 0, 0.8);
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9rem;
-  color: #ccc;
+  margin-top: 80px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 0.9em;
 }
