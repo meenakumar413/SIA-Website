@@ -2,18 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skills and Innovation Academy (SIA)</title>
   <link rel="stylesheet" href="sia-style.css" />
+  <style>
+    .hero-section {
+      margin-top: 120px;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .programs {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .program-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 25px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .program-card h3 {
+      margin-top: 0;
+      color: #ffdd57;
+    }
+    .program-link {
+      color: #ffdd57;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .program-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="sia-logo.png" alt="SIA Logo" />
-      </a>
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo" /></a>
       <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
         <li><a href="generative_ai.html">Generative AI</a></li>
         <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
@@ -29,61 +69,58 @@
     </nav>
   </header>
 
-  <main class="slides" style="margin-top:110px;">
-
-    <!-- Slide 1 -->
-    <section class="slide purple">
+  <main class="hero-section">
+    <div class="hero-content">
       <h1>Welcome to Skills and Innovation Academy (SIA)</h1>
-      <p>Empowering young minds to think critically, innovate boldly, and embrace technology for a brighter tomorrow.</p>
+      <p>Preparing young minds for a rapidly changing future through creativity, critical thinking, and emerging technologies.</p>
       <a href="ai_fundamentals.html" class="cta-button">Start Learning</a>
-    </section>
-
-    <!-- Slide 2 -->
-    <section class="slide blue">
-      <h2>Our Mission</h2>
-      <p>Skills and Innovation Academy (SIA) is committed to preparing learners for a rapidly changing world by developing creativity, critical thinking, and problem-solving skills through hands-on learning.</p>
-    </section>
-
-    <!-- Slide 3 -->
-    <section class="slide purple">
-      <h2>Our Programs</h2>
-      <ul>
-        <li>AI Fundamentals — Learn the foundations of Artificial Intelligence</li>
-        <li>Generative AI — Discover how AI creates art, text, and ideas</li>
-        <li>AI Tools — Explore ChatGPT, GitHub, Gemini, and more</li>
-        <li>Microsoft Copilot — Boost productivity with intelligent tools</li>
-        <li>Financial Literacy — Build real-world skills for smart decisions</li>
-      </ul>
-    </section>
-
-    <!-- Slide 4 -->
-    <section class="slide blue">
-      <h2>Innovation Through Technology</h2>
-      <p>Our learners explore the tools shaping the future — from coding and AI models to creative problem-solving and digital citizenship.</p>
-    </section>
-
-    <!-- Slide 5 -->
-    <section class="slide purple">
-      <h2>Future-Ready Skills</h2>
-      <ul>
-        <li>Critical Thinking</li>
-        <li>Creative Problem Solving</li>
-        <li>AI Literacy & Ethics</li>
-        <li>Financial & Digital Skills</li>
-      </ul>
-    </section>
-
-    <!-- Slide 6 -->
-    <section class="slide blue">
-      <h2>Join Our Learning Community</h2>
-      <p>Connect with innovators, educators, and students passionate about the future of learning and technology.</p>
-      <a href="contact.html" class="cta-button">Get in Touch</a>
-    </section>
-
+    </div>
   </main>
 
+  <section class="programs">
+    <h2>Our Programs</h2>
+    <div class="program-grid">
+      <div class="program-card">
+        <h3>AI Fundamentals</h3>
+        <p>Learn the core principles of Artificial Intelligence.</p>
+        <a href="ai_fundamentals.html" class="program-link">Explore</a>
+      </div>
+
+      <div class="program-card">
+        <h3>Generative AI</h3>
+        <p>Discover how AI creates new content like text, images, and music.</p>
+        <a href="generative_ai.html" class="program-link">Explore</a>
+      </div>
+
+      <div class="program-card">
+        <h3>AI Tools</h3>
+        <p>Explore key AI tools transforming learning and innovation.</p>
+        <ul>
+          <li><a href="ai_tools.html#chatgpt" class="program-link">ChatGPT</a></li>
+          <li><a href="ai_tools.html#notebooklm" class="program-link">Notebook LM</a></li>
+          <li><a href="ai_tools.html#gemini" class="program-link">Google Gemini</a></li>
+          <li><a href="ai_tools.html#copilot" class="program-link">Microsoft Copilot</a></li>
+          <li><a href="ai_tools.html#perplexity" class="program-link">Perplexity AI</a></li>
+          <li><a href="ai_tools.html#github" class="program-link">Git & GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="program-card">
+        <h3>Financial Literacy</h3>
+        <p>Understand the basics of money management and financial confidence.</p>
+        <a href="financial_literacy.html" class="program-link">Explore</a>
+      </div>
+
+      <div class="program-card">
+        <h3>Industries Using AI</h3>
+        <p>See how AI is transforming education, health, and more.</p>
+        <a href="industries.html" class="program-link">Explore</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>© 2025 Skills and Innovation Academy | contact.siaacademy@gmail.com</p>
+    <p>© 2025 Skills and Innovation Academy (SIA) | contact.siaacademy@gmail.com</p>
   </footer>
 </body>
 </html>
