@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Tools | SIA AI Portal</title>
+  <title>AI Tools | Skills and Innovation Academy (SIA)</title>
   <link rel="stylesheet" href="sia-style.css" />
 </head>
-<body>
 
-  <!-- Navbar -->
+<body>
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo" /></a>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
         <li><a href="generative_ai.html">Generative AI</a></li>
         <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
@@ -20,6 +20,7 @@
         <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
         <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
         <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="ai_tools.html" class="active">AI Tools</a></li>
         <li><a href="industries.html">Industries</a></li>
         <li><a href="financial_literacy.html">Financial Literacy</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -27,90 +28,56 @@
     </nav>
   </header>
 
-  <!-- Main Slides -->
-  <main class="slides" style="margin-top:110px;">
-
-    <section class="slide purple">
-      <h2>AI Tools Overview</h2>
-      <p>Welcome! Explore some of the most popular AI tools transforming learning, productivity, and creativity.</p>
+  <main class="slides">
+    <section class="slide purple" id="chatgpt">
+      <h2>ChatGPT</h2>
+      <p><strong>Purpose:</strong> ChatGPT is an AI language model developed by OpenAI that generates human-like responses to text inputs.</p>
+      <p><strong>Key Features:</strong> Conversation simulation, writing assistance, brainstorming, and learning support.</p>
+      <p><strong>How It’s Used:</strong> Educators and students use ChatGPT to summarize lessons, explain topics, and practice writing or coding tasks.</p>
     </section>
 
-    <section class="slide blue">
-      <h3>ChatGPT</h3>
-      <ul>
-        <li>Conversational AI for questions, writing, and coding.</li>
-        <li>Supports brainstorming, learning, and content creation.</li>
-        <li>Easy-to-use interface for beginners and experts alike.</li>
-      </ul>
-      <p class="notes">Think of ChatGPT as your personal AI assistant to help with text, code, or general knowledge queries.</p>
+    <section class="slide blue" id="notebooklm">
+      <h2>Notebook LM</h2>
+      <p><strong>Purpose:</strong> Notebook LM is Google’s AI-powered research and note-taking assistant.</p>
+      <p><strong>Key Features:</strong> Summarizes long documents, answers questions from your notes, and creates study guides automatically.</p>
+      <p><strong>How It’s Used:</strong> Ideal for students and teachers managing projects or analyzing research materials.</p>
     </section>
 
-    <section class="slide purple">
-      <h3>Git & GitHub</h3>
-      <ul>
-        <li>Git: tracks changes in your code (version control).</li>
-        <li>GitHub: online platform for collaboration and sharing projects.</li>
-        <li>Essential for teamwork and code management.</li>
-      </ul>
-      <p class="notes">Git is like a time machine for your projects; GitHub lets teams work together efficiently.</p>
+    <section class="slide purple" id="gemini">
+      <h2>Google Gemini</h2>
+      <p><strong>Purpose:</strong> Gemini is Google’s generative AI model designed for reasoning, problem-solving, and multimodal understanding.</p>
+      <p><strong>Key Features:</strong> Works across text, images, and code. Integrates deeply with Google Workspace tools like Docs and Sheets.</p>
+      <p><strong>How It’s Used:</strong> Helps with lesson planning, automating reports, and creative classroom projects.</p>
     </section>
 
-    <section class="slide blue">
-      <h3>Notebook LM</h3>
-      <ul>
-        <li>Interactive AI-powered notebooks for coding, research, and learning.</li>
-        <li>Supports natural language queries inside notebooks.</li>
-        <li>Great for experimentation and teaching AI concepts.</li>
-      </ul>
-      <p class="notes">Notebook LM allows users to combine AI assistance with live coding environments.</p>
+    <section class="slide blue" id="copilot">
+      <h2>Microsoft Copilot</h2>
+      <p><strong>Purpose:</strong> Microsoft Copilot integrates AI directly into Office tools to boost productivity and creativity.</p>
+      <p><strong>Key Features:</strong> Generates emails, summarizes documents, creates presentations, and analyzes Excel data.</p>
+      <p><strong>How It’s Used:</strong> Perfect for students and professionals managing time, data, and digital communication efficiently.</p>
     </section>
 
-    <section class="slide purple">
-      <h3>Google Gemini</h3>
-      <ul>
-        <li>Next-generation AI model by Google.</li>
-        <li>Capable of multimodal tasks: text, images, and more.</li>
-        <li>Ideal for advanced AI applications and creative projects.</li>
-      </ul>
-      <p class="notes">Gemini enables developers and researchers to leverage state-of-the-art AI capabilities.</p>
+    <section class="slide purple" id="perplexity">
+      <h2>Perplexity AI</h2>
+      <p><strong>Purpose:</strong> Perplexity AI is a conversational search engine that provides clear, sourced answers to questions.</p>
+      <p><strong>Key Features:</strong> Real-time web search, citation links, topic exploration, and research summaries.</p>
+      <p><strong>How It’s Used:</strong> Great for inquiry-based learning and research, ensuring factual and reliable responses.</p>
     </section>
 
-    <section class="slide blue">
-      <h3>Microsoft Copilot</h3>
-      <ul>
-        <li>AI assistant integrated with Microsoft 365 applications.</li>
-        <li>Automates writing, summarizing, and data tasks in Word, Excel, and Teams.</li>
-        <li>Boosts productivity in the workplace.</li>
-      </ul>
-      <p class="notes">Copilot helps users get more done with AI directly inside familiar Microsoft tools.</p>
+    <section class="slide blue" id="github">
+      <h2>Git & GitHub</h2>
+      <p><strong>Purpose:</strong> Git tracks changes in code (version control), while GitHub hosts projects for collaboration.</p>
+      <p><strong>Key Features:</strong> Save versions, collaborate on repositories, and share code easily online.</p>
+      <p><strong>How It’s Used:</strong> Enables teamwork on coding projects, version history tracking, and portfolio development for students.</p>
     </section>
 
-    <section class="slide purple">
-      <h3>Perplexity</h3>
-      <ul>
-        <li>AI search engine combining chat and verified answers.</li>
-        <li>Answers queries with concise explanations and references.</li>
-        <li>Useful for research, fact-checking, and learning.</li>
-      </ul>
-      <p class="notes">Perplexity brings AI-powered insights directly to your questions with reliable sources.</p>
-    </section>
-
-    <section class="slide blue">
-      <h3>Final Takeaways</h3>
-      <ul>
-        <li>These AI tools enhance learning, creativity, and productivity.</li>
-        <li>Experiment with each tool to understand its strengths and applications.</li>
-        <li>Stay curious and explore the AI landscape responsibly.</li>
-      </ul>
-      <p class="notes">Mastering these tools will give you a practical edge in AI-driven work and study.</p>
-    </section>
-
-    <!-- Back to Home Button -->
-    <section class="back-home">
-      <a href="index.html" class="cta-button">Back to Home</a>
-    </section>
-
+    <div style="text-align:center; margin-top: 40px;">
+      <a href="index.html" class="cta-button">← Back to Home</a>
+    </div>
   </main>
 
+  <footer>
+    <p>© 2025 Skills and Innovation Academy (SIA) | contact.siaacademy@gmail.com</p>
+  </footer>
 </body>
 </html>
