@@ -6,48 +6,44 @@
   <title>Skills and Innovation Academy (SIA)</title>
   <link rel="stylesheet" href="sia-style.css" />
   <style>
+    /* Hero spacing below fixed navbar */
     .hero-section {
       margin-top: 120px;
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
     .programs {
-      padding: 60px 20px;
+      padding: 40px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
     .program-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
     }
     .program-card {
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 25px;
+      border-radius: 12px;
+      padding: 20px;
       text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .program-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
     .program-card h3 {
       margin-top: 0;
-      color: #ffdd57;
     }
     .program-link {
       color: #ffdd57;
       text-decoration: none;
-      font-weight: 500;
     }
-    .program-link:hover {
-      text-decoration: underline;
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.4);
+      margin-top: 40px;
+      font-size: 0.9em;
     }
   </style>
 </head>
-
 <body>
   <header>
     <nav class="navbar">
@@ -85,32 +81,21 @@
         <p>Learn the core principles of Artificial Intelligence.</p>
         <a href="ai_fundamentals.html" class="program-link">Explore</a>
       </div>
-
       <div class="program-card">
         <h3>Generative AI</h3>
         <p>Discover how AI creates new content like text, images, and music.</p>
         <a href="generative_ai.html" class="program-link">Explore</a>
       </div>
-
       <div class="program-card">
         <h3>AI Tools</h3>
-        <p>Explore key AI tools transforming learning and innovation.</p>
-        <ul>
-          <li><a href="ai_tools.html#chatgpt" class="program-link">ChatGPT</a></li>
-          <li><a href="ai_tools.html#notebooklm" class="program-link">Notebook LM</a></li>
-          <li><a href="ai_tools.html#gemini" class="program-link">Google Gemini</a></li>
-          <li><a href="ai_tools.html#copilot" class="program-link">Microsoft Copilot</a></li>
-          <li><a href="ai_tools.html#perplexity" class="program-link">Perplexity AI</a></li>
-          <li><a href="ai_tools.html#github" class="program-link">Git & GitHub</a></li>
-        </ul>
+        <p>Explore ChatGPT, Notebook LM, Google Gemini, Microsoft Copilot, Perplexity, and Git & GitHub.</p>
+        <a href="ai_tools.html" class="program-link">Explore</a>
       </div>
-
       <div class="program-card">
         <h3>Financial Literacy</h3>
         <p>Understand the basics of money management and financial confidence.</p>
         <a href="financial_literacy.html" class="program-link">Explore</a>
       </div>
-
       <div class="program-card">
         <h3>Industries Using AI</h3>
         <p>See how AI is transforming education, health, and more.</p>
