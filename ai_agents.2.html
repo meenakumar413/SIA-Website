@@ -1,141 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Agents | Skills & Innovation Academy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Agents | SIA AI Portal</title>
   <link rel="stylesheet" href="sia-style.css" />
-  <style>
-    :root {
-      --primary1: #5b21b6;
-      --primary2: #0ea5e9;
-      --accent: #8b5cf6;
-      --card-bg: #ffffff;
-      --muted: #6b7280;
-      --glass: rgba(255,255,255,0.08);
-      --max-width: 1100px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#0f172a; background:linear-gradient(135deg, var(--primary1), var(--primary2)); line-height:1.5; }
-    a { text-decoration: none; color: inherit; }
-
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 28px; }
-
-    header { display:flex; justify-content: space-between; align-items: center; color: white; margin-bottom: 32px; }
-    .brand { display:flex; align-items: center; gap: 12px; }
-    .logo { background: var(--glass); padding: 10px; border-radius: 10px; font-weight: 700; font-size: 18px; display:flex; align-items:center; justify-content:center; width:56px; height:56px; }
-    .site-title { font-weight:600; font-size:18px; }
-    .nav-actions { display:flex; gap:12px; }
-    .btn { border:none; padding:10px 16px; border-radius:10px; font-weight:600; cursor:pointer; box-shadow:0 6px 18px rgba(11,15,30,0.12); }
-    .btn.primary { background:white; color: var(--primary1); }
-    .btn.secondary { background:transparent; border:1px solid rgba(255,255,255,0.2); color:white; }
-
-    .hero { background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); border-radius:18px; padding:32px; display:flex; gap:24px; align-items:center; margin-bottom:40px; color:white; }
-    .hero-left { flex:1; }
-    .hero-left h1 { font-size:32px; font-weight:700; margin-bottom:12px; }
-    .hero-left p { font-size:16px; color:rgba(255,255,255,0.9); }
-    .hero-cta { margin-top:16px; display:flex; gap:12px; }
-    .hero-right { width:320px; min-width:220px; }
-    .card-preview { background: var(--glass); padding:16px; border-radius:16px; text-align:center; }
-    .preview-thumb { height:160px; border-radius:12px; background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); display:flex; align-items:center; justify-content:center; font-weight:600; color:rgba(255,255,255,0.85); margin-bottom:10px; }
-
-    .section-title { font-size:24px; font-weight:700; margin-bottom:20px; color:white; text-align:center; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:24px; }
-
-    .slide-card { background:white; border-radius:16px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:12px; transition: transform 0.2s ease; }
-    .slide-card:hover { transform: translateY(-4px); }
-    .slide-card h3 { font-size:18px; color: var(--primary1); }
-    .slide-card p { font-size:14px; color: var(--muted); }
-    .badge { display:inline-block; background:var(--glass); padding:4px 10px; border-radius:999px; font-size:12px; color:white; }
-
-    footer { text-align:center; color:white; margin-top:40px; font-size:14px; }
-
-    @media(max-width:640px){ .hero { flex-direction: column; align-items:stretch; } .hero-right{ width:100%; } header{ flex-direction:column; align-items:flex-start; gap:12px; } }
-  </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">SIA</div>
-        <div>
-          <div class="site-title">Skills & Innovation Academy</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.85)">Learn AI with Professor Meena</div>
-        </div>
-      </div>
-      <div class="nav-actions">
-        <a href="index.html" class="btn secondary">Home</a>
-        <button class="btn secondary" onclick="scrollToSection('slides')">Slides</button>
-      </div>
-    </header>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html" class="active">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="financial_literacy.html">Financial Literacy</a></li>
+        <li><a href="ai_tools.html">AI Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-left">
-        <h1>AI Agents: Learn to Build Smart Systems</h1>
-        <p>Understand LLMs, embeddings, and LangChain workflows. Build intelligent AI agents with confidence.</p>
-        <div class="hero-cta">
-          <button class="btn primary" onclick="scrollToSection('slides')">View Slides</button>
-        </div>
-      </div>
-      <aside class="hero-right">
-        <div class="card-preview">
-          <div class="preview-thumb">🤖 AI Agents Preview</div>
-          <div style="display:flex;gap:8px;justify-content:center;">
-            <span class="badge">Intermediate</span>
-            <span class="badge">Hands-on Labs</span>
-          </div>
-        </div>
-      </aside>
+  <main class="slides" style="margin-top:110px;">
+    <section class="slide purple">
+      <h2>AI Agents: Learn the Fundamentals First</h2>
+      <p>Mastering fundamentals is essential before building AI agents.</p>
     </section>
 
-    <!-- Slides / Topics -->
-    <section id="slides">
-      <h2 class="section-title">Topics Covered</h2>
-      <div class="cards">
-        <div class="slide-card">
-          <h3>Why Fundamentals Matter</h3>
-          <p>Learn why understanding LLMs and embeddings is crucial before building agents.</p>
-        </div>
-        <div class="slide-card">
-          <h3>How LLMs Work</h3>
-          <p>Tokens, context windows, and prompt engineering explained simply.</p>
-        </div>
-        <div class="slide-card">
-          <h3>Embeddings & Vectors</h3>
-          <p>Turn words into numbers and build semantic search for AI memory.</p>
-        </div>
-        <div class="slide-card">
-          <h3>LangChain Overview</h3>
-          <p>Connect LLMs to tools with modular workflows for agent creation.</p>
-        </div>
-        <div class="slide-card">
-          <h3>Vector Databases & RAG</h3>
-          <p>Store and retrieve embeddings for scalable Retrieve-Augmented Generation systems.</p>
-        </div>
-        <div class="slide-card">
-          <h3>LangGraph & MCP</h3>
-          <p>Visualize multi-step workflows and connect models to real-world tools.</p>
-        </div>
-        <div class="slide-card">
-          <h3>Prompt Engineering</h3>
-          <p>Use zero-shot, few-shot, and chain-of-thought prompts for better agent outputs.</p>
-        </div>
-        <div class="slide-card">
-          <h3>Practice Labs</h3>
-          <p>Hands-on API calls and example projects to solidify your learning.</p>
-        </div>
-      </div>
+    <section class="slide blue">
+      <h3>Why Fundamentals Matter</h3>
+      <ul>
+        <li>AI agents rely on foundational concepts</li>
+        <li>Skipping fundamentals leads to confusion</li>
+        <li>Learn before you build</li>
+      </ul>
+      <p class="notes">Many developers rush into building agents without understanding how LLMs work. This slide sets the stage for why that’s risky.</p>
     </section>
 
-    <footer>
-      © 2025 Skills & Innovation Academy | contact.siaacademy@gmail.com
-    </footer>
-  </div>
+    <section class="slide purple">
+      <h3>How LLMs Work</h3>
+      <ul>
+        <li>LLMs generate responses using tokens</li>
+        <li>Context windows define memory scope</li>
+        <li>Prompt structure affects output</li>
+      </ul>
+      <p class="notes">LLMs process inputs as tokens. Understanding context windows helps you design better prompts and manage memory.</p>
+    </section>
 
-  <script>
-    function scrollToSection(id){const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth', block:'start'});}
-  </script>
+    <section class="slide blue">
+      <h3>Embeddings & Vectors</h3>
+      <ul>
+        <li>Embeddings turn words into numbers</li>
+        <li>Vectors enable semantic search</li>
+        <li>Used in AI memory and retrieval</li>
+      </ul>
+      <p class="notes">Embeddings are the backbone of semantic understanding. They allow AI to “remember” and “search” intelligently.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>LangChain Overview</h3>
+      <ul>
+        <li>LangChain connects LLMs to tools</li>
+        <li>Modular components for workflows</li>
+        <li>Ideal for building agents</li>
+      </ul>
+      <p class="notes">LangChain is a powerful framework that lets you build agents by chaining together prompts, tools, and memory.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Practice Labs – API Calls</h3>
+      <ul>
+        <li>Make your first API call</li>
+        <li>Understand request/response flow</li>
+        <li>Build confidence with real data</li>
+      </ul>
+      <p class="notes">KodeKloud walks through making an OpenAI API call. This is your first step toward building functional agents.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Prompt Engineering</h3>
+      <ul>
+        <li>Use zero-shot and few-shot prompts</li>
+        <li>Chain-of-thought improves reasoning</li>
+        <li>Test and iterate for clarity</li>
+      </ul>
+      <p class="notes">Prompt engineering is an art. Learn how to guide the model’s thinking with structured inputs.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Vector Databases & RAG</h3>
+      <ul>
+        <li>Tools like ChromaDB and Pinecone</li>
+        <li>Store and retrieve embeddings</li>
+        <li>Retrieve-Augmented Generation (RAG) systems</li>
+      </ul>
+      <p class="notes">Vector DBs and RAG are essential for scalable and accurate agent memory + document Q&A.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>LangGraph & MCP</h3>
+      <ul>
+        <li>LangGraph for multi-step workflows</li>
+        <li>MCP to connect models to external tools</li>
+        <li>Design stateful and reliable agents</li>
+      </ul>
+      <p class="notes">LangGraph visualizes multi-step logic, and MCP enables real-world actions for agents.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Final Takeaways</h3>
+      <ul>
+        <li>Learn fundamentals before tools</li>
+        <li>Practice with real labs</li>
+        <li>Create scalable, intelligent agents</li>
+      </ul>
+      <p class="notes">Build your foundation, then scale your agent development.</p>
+    </section>
+  </main>
 </body>
 </html>
+
+<section class="back-home">
+  <a href="index.html" class="cta-button">Back to Home</a>
+   </section>
+  
+  <footer>
+    <p>© 2025 Skills and Innovation Academy | contact.siaacademy@gmail.com</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
