@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generative AI | Skills and Innovation Academy (SIA)</title>
+  <link rel="stylesheet" href="sia-style.css" />
+  <style>
+    /* Recording section custom styles */
+    .recordings-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .recording-card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: 0.3s;
+      color: #fff;
+    }
+
+    .recording-card:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .price-tag {
+      margin-top: 10px;
+      display: inline-block;
+      background: #fff;
+      color: #2575fc;
+      padding: 6px 12px;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #333;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .close-btn {
+      background: #2575fc;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html" class="active">Generative AI</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="financial_literacy.html">Financial Literacy</a></li>
+        <li><a href="ai_tools.html">AI Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Slides Section -->
+  <main class="slides" style="margin-top:110px;">
+    <section class="slide purple">
+      <h2>Introduction to Generative AI</h2>
+      <p>Welcome! This presentation introduces key concepts of Generative AI.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>What Is Generative AI?</h3>
+      <ul>
+        <li>AI that creates new content</li>
+        <li>Examples: text, images, music, code</li>
+        <li>Powered by deep learning models</li>
+      </ul>
+      <p class="notes">Generative AI goes beyond prediction—it generates original outputs based on learned patterns.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Real-World Applications</h3>
+      <ul>
+        <li>Chatbots and virtual assistants</li>
+        <li>Image and video generation</li>
+        <li>Code completion and debugging</li>
+      </ul>
+      <p class="notes">From customer service to creative industries, generative AI is transforming how we work and interact.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Key Technologies</h3>
+      <ul>
+        <li>Neural networks and transformers</li>
+        <li>Large Language Models (LLMs)</li>
+        <li>Training on massive datasets</li>
+      </ul>
+      <p class="notes">These technologies enable machines to understand and replicate human-like creativity.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Popular Tools</h3>
+      <ul>
+        <li>ChatGPT, DALL·E, Midjourney</li>
+        <li>Hugging Face Transformers</li>
+        <li>Google Bard, Meta LLaMA</li>
+      </ul>
+      <p class="notes">These tools make generative AI accessible to developers, educators, and creators.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Ethical Considerations</h3>
+      <ul>
+        <li>Bias in training data</li>
+        <li>Copyright and originality</li>
+        <li>Misinformation risks</li>
+      </ul>
+      <p class="notes">With great power comes responsibility—ethical design and usage are essential.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Course Structure</h3>
+      <ul>
+        <li>Hands-on demos and coding</li>
+        <li>Community support and Q&A</li>
+      </ul>
+      <p class="notes">The course is structured to build your understanding step-by-step, with practical examples.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Final Takeaways</h3>
+      <ul>
+        <li>Learn the fundamentals</li>
+        <li>Explore real-world tools</li>
+        <li>Practice with guided labs</li>
+      </ul>
+      <p class="notes">This is just the beginning—continue learning and experimenting to unlock the full potential of generative AI.</p>
+    </section>
+
+    <!-- Event Recordings Section -->
+    <section class="slide purple">
+      <h2>Generative AI – Event Recordings</h2>
+      <div class="recordings-container">
+
+        <div class="recording-card" onclick="openModal('Generative AI — Ages 5–8')">
+          <h3>Generative AI — Ages 5–8</h3>
+          <p>Full workshop recording</p>
+          <span class="price-tag">$35</span>
+        </div>
+
+        <div class="recording-card" onclick="openModal('Generative AI — Ages 9–11')">
+          <h3>Generative AI — Ages 9–11</h3>
+          <p>Full workshop recording</p>
+          <span class="price-tag">$35</span>
+        </div>
+
+        <div class="recording-card" onclick="openModal('Generative AI — Ages 12–16')">
+          <h3>Generative AI — Ages 12–16</h3>
+          <p>Full workshop recording</p>
+          <span class="price-tag">$35</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="back-home">
+      <a href="index.html" class="cta-button">Back to Home</a>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title"></h2>
+      <p>This recording is $35. Payment integration can be added later.</p>
+      <div class="close-btn" onclick="closeModal()">Close</div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title) {
+      document.getElementById("modal-title").innerText = title;
+      document.getElementById("modal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
