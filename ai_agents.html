@@ -3,139 +3,339 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Agents | Skills & Innovation Academy</title>
+  <title>AI Agents | Skills & Innovation Academy (SIA)</title>
   <link rel="stylesheet" href="sia-style.css" />
+
   <style>
     :root {
-      --primary1: #5b21b6;
-      --primary2: #0ea5e9;
-      --accent: #8b5cf6;
+      --primary1: #6a11cb;
+      --primary2: #2575fc;
       --card-bg: #ffffff;
       --muted: #6b7280;
-      --glass: rgba(255,255,255,0.08);
+      --glass: rgba(255,255,255,0.1);
       --max-width: 1100px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#0f172a; background:linear-gradient(135deg, var(--primary1), var(--primary2)); line-height:1.5; }
-    a { text-decoration: none; color: inherit; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, var(--primary1), var(--primary2));
+      color: #fff;
+    }
 
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 28px; }
+    /* Container */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-    header { display:flex; justify-content: space-between; align-items: center; color: white; margin-bottom: 32px; }
-    .brand { display:flex; align-items: center; gap: 12px; }
-    .logo { background: var(--glass); padding: 10px; border-radius: 10px; font-weight: 700; font-size: 18px; display:flex; align-items:center; justify-content:center; width:56px; height:56px; }
-    .site-title { font-weight:600; font-size:18px; }
-    .nav-actions { display:flex; gap:12px; }
-    .btn { border:none; padding:10px 16px; border-radius:10px; font-weight:600; cursor:pointer; box-shadow:0 6px 18px rgba(11,15,30,0.12); }
-    .btn.primary { background:white; color: var(--primary1); }
-    .btn.secondary { background:transparent; border:1px solid rgba(255,255,255,0.2); color:white; }
+    /* Hero Section */
+    .hero {
+      margin-top: 120px;
+      background: rgba(255,255,255,0.08);
+      padding: 40px;
+      border-radius: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
 
-    .hero { background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); border-radius:18px; padding:32px; display:flex; gap:24px; align-items:center; margin-bottom:40px; color:white; }
-    .hero-left { flex:1; }
-    .hero-left h1 { font-size:32px; font-weight:700; margin-bottom:12px; }
-    .hero-left p { font-size:16px; color:rgba(255,255,255,0.9); }
-    .hero-cta { margin-top:16px; display:flex; gap:12px; }
-    .hero-right { width:320px; min-width:220px; }
-    .card-preview { background: var(--glass); padding:16px; border-radius:16px; text-align:center; }
-    .preview-thumb { height:160px; border-radius:12px; background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); display:flex; align-items:center; justify-content:center; font-weight:600; color:rgba(255,255,255,0.85); margin-bottom:10px; }
+    .hero-left {
+      flex: 1;
+      min-width: 260px;
+    }
 
-    .section-title { font-size:24px; font-weight:700; margin-bottom:20px; color:white; text-align:center; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:24px; }
+    .hero-left h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
 
-    .slide-card { background:white; border-radius:16px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:12px; transition: transform 0.2s ease; }
-    .slide-card:hover { transform: translateY(-4px); }
-    .slide-card h3 { font-size:18px; color: var(--primary1); }
-    .slide-card p { font-size:14px; color: var(--muted); }
-    .badge { display:inline-block; background:var(--glass); padding:4px 10px; border-radius:999px; font-size:12px; color:white; }
+    .hero-left p {
+      font-size: 17px;
+      opacity: 0.9;
+    }
 
-    footer { text-align:center; color:white; margin-top:40px; font-size:14px; }
+    .hero-cta {
+      margin-top: 20px;
+    }
 
-    @media(max-width:640px){ .hero { flex-direction: column; align-items:stretch; } .hero-right{ width:100%; } header{ flex-direction:column; align-items:flex-start; gap:12px; } }
+    .btn-primary {
+      background: #fff;
+      color: var(--primary2);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .hero-right {
+      width: 300px;
+      min-width: 240px;
+    }
+
+    .card-preview {
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
+      text-align: center;
+      border-radius: 14px;
+    }
+
+    .preview-thumb {
+      background: rgba(255,255,255,0.1);
+      height: 160px;
+      display: flex;
+      border-radius: 12px;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin: 40px 0 20px;
+      font-weight: bold;
+    }
+
+    /* Cards Layout */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 24px;
+    }
+
+    .slide-card {
+      background: white;
+      color: #333;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+
+    .slide-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .slide-card h3 {
+      color: var(--primary1);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .slide-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Recording Cards */
+    .recording-card {
+      background: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      backdrop-filter: blur(10px);
+      color: white;
+    }
+
+    .recording-card:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .price-tag {
+      margin-top: 10px;
+      display: inline-block;
+      background: #fff;
+      color: #2575fc;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #333;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .close-btn {
+      background: #2575fc;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 50px 0;
+      color: white;
+      opacity: 0.9;
+    }
   </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">SIA</div>
-        <div>
-          <div class="site-title">Skills & Innovation Academy</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.85)">Learn AI with Professor Meena</div>
-        </div>
-      </div>
-      <div class="nav-actions">
-        <a href="index.html" class="btn secondary">Home</a>
-        <button class="btn secondary" onclick="scrollToSection('slides')">Slides</button>
-      </div>
-    </header>
 
-    <!-- Hero -->
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html" class="active">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="financial_literacy.html">Financial Literacy</a></li>
+        <li><a href="ai_tools.html">AI Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-left">
-        <h1>AI Agents: Learn to Build Smart Systems</h1>
-        <p>Understand LLMs, embeddings, and LangChain workflows. Build intelligent AI agents with confidence.</p>
+        <h1>AI Agents</h1>
+        <p>Learn how LLMs, vectors, embeddings, and agent frameworks work. Build smart automated systems with real tools.</p>
+
         <div class="hero-cta">
-          <button class="btn primary" onclick="scrollToSection('slides')">View Slides</button>
+          <button class="btn-primary" onclick="scrollToSection('topics')">View Topics</button>
         </div>
       </div>
-      <aside class="hero-right">
+
+      <div class="hero-right">
         <div class="card-preview">
-          <div class="preview-thumb">🤖 AI Agents Preview</div>
-          <div style="display:flex;gap:8px;justify-content:center;">
-            <span class="badge">Intermediate</span>
-            <span class="badge">Hands-on Labs</span>
-          </div>
+          <div class="preview-thumb">🤖 AI Agents Overview</div>
+          <span>Intermediate • Hands-On • Real Projects</span>
         </div>
-      </aside>
+      </div>
     </section>
 
-    <!-- Slides / Topics -->
-    <section id="slides">
+    <!-- TOPICS -->
+    <section id="topics">
       <h2 class="section-title">Topics Covered</h2>
+
       <div class="cards">
         <div class="slide-card">
-          <h3>Why Fundamentals Matter</h3>
-          <p>Learn why understanding LLMs and embeddings is crucial before building agents.</p>
+          <h3>LLM Fundamentals</h3>
+          <p>Understand tokens, context windows, and model behavior.</p>
         </div>
+
         <div class="slide-card">
-          <h3>How LLMs Work</h3>
-          <p>Tokens, context windows, and prompt engineering explained simply.</p>
+          <h3>Vector Embeddings</h3>
+          <p>How meaning is stored as numbers for AI memory + search.</p>
         </div>
+
         <div class="slide-card">
-          <h3>Embeddings & Vectors</h3>
-          <p>Turn words into numbers and build semantic search for AI memory.</p>
+          <h3>LangChain Workflows</h3>
+          <p>Building pipelines that connect tools, data, and LLMs.</p>
         </div>
+
         <div class="slide-card">
-          <h3>LangChain Overview</h3>
-          <p>Connect LLMs to tools with modular workflows for agent creation.</p>
+          <h3>Vector Databases</h3>
+          <p>We explore Pinecone, ChromaDB, and embedding indexing.</p>
         </div>
+
         <div class="slide-card">
-          <h3>Vector Databases & RAG</h3>
-          <p>Store and retrieve embeddings for scalable Retrieve-Augmented Generation systems.</p>
+          <h3>Agents & Tools</h3>
+          <p>Enable AI to take actions, call APIs, and solve tasks.</p>
         </div>
-        <div class="slide-card">
-          <h3>LangGraph & MCP</h3>
-          <p>Visualize multi-step workflows and connect models to real-world tools.</p>
-        </div>
+
         <div class="slide-card">
           <h3>Prompt Engineering</h3>
-          <p>Use zero-shot, few-shot, and chain-of-thought prompts for better agent outputs.</p>
-        </div>
-        <div class="slide-card">
-          <h3>Practice Labs</h3>
-          <p>Hands-on API calls and example projects to solidify your learning.</p>
+          <p>Use zero-shot, few-shot, structured prompting for agents.</p>
         </div>
       </div>
     </section>
 
-    <footer>
-      © 2025 Skills & Innovation Academy | contact.siaacademy@gmail.com
-    </footer>
+    <!-- RECORDINGS -->
+    <section>
+      <h2 class="section-title">AI Agents – Event Recordings</h2>
+
+      <div class="cards">
+        <div class="recording-card" onclick="openModal('AI Agents — Ages 5–8')">
+          <h2>AI Agents — Ages 5–8</h2>
+          <p>Full workshop recording</p>
+          <span class="price-tag">$35</span>
+        </div>
+
+        <div class="recording-card" onclick="openModal('AI Agents — Ages 9–11')">
+          <h2>AI Agents — Ages 9–11</h2>
+          <p>Full workshop recording</p>
+          <span class="price-tag">$35</span>
+        </div>
+
+        <div class="recording-card" onclick="openModal('AI Agents — Ages 12–16')">
+          <h2>AI Agents — Ages 12–16</h2>
+          <p>Full workshop recording</p>
+          <span class="price-tag">$35</span>
+        </div>
+      </div>
+    </section>
+
   </div>
 
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title"></h2>
+      <p>This recording is $35. Payment integration can be added later.</p>
+      <div class="close-btn" onclick="closeModal()">Close</div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Skills & Innovation Academy — contact.siaacademy@gmail.com
+  </footer>
+
   <script>
-    function scrollToSection(id){const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth', block:'start'});}
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+    function openModal(title) {
+      document.getElementById("modal-title").innerText = title;
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
   </script>
+
 </body>
 </html>
