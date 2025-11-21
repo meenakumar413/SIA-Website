@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Fundamentals + Recordings | Skills & Innovation Academy (SIA)</title>
+
+  <style>
+    /* =========================
+       GLOBAL THEME
+    ========================== */
+    :root{
+      --bg1:#5b21b6; /* purple */
+      --bg2:#0ea5e9; /* blue */
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#8b5cf6;
+      --glass: rgba(255,255,255,0.08);
+      --max-width:1200px;
+      --price:35;
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+
+    body{
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background:linear-gradient(135deg,var(--bg1), var(--bg2));
+      color:white;
+      -webkit-font-smoothing:antialiased;
+      padding-bottom:50px;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+    .navbar{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 26px;
+      position:sticky;
+      top:0;
+      background:rgba(0,0,0,0.25);
+      backdrop-filter:blur(8px);
+      z-index:50;
+    }
+
+    .logo img{
+      height:48px;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:18px;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      padding:8px 12px;
+      border-radius:8px;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover{
+      background:rgba(255,255,255,0.18);
+    }
+
+    /* =========================
+       SHARED CONTAINER
+    ========================== */
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:28px;
+    }
+
+    /* =========================
+       AI FUNDAMENTALS SECTION
+    ========================== */
+    .slides{
+      margin-top:40px;
+    }
+
+    .slide{
+      padding:32px;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      margin-bottom:30px;
+    }
+
+    .purple{ background:rgba(255,255,255,0.10); }
+    .blue{ background:rgba(255,255,255,0.05); }
+
+    .slide h2, .slide h3{
+      margin-bottom:12px;
+    }
+
+    .slide ul{
+      margin-left:22px;
+      margin-top:12px;
+    }
+
+    .cta-button{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 24px;
+      background:white;
+      color:var(--bg1);
+      font-weight:700;
+      border-radius:10px;
+      text-decoration:none;
+    }
+
+    /* =========================
+       RECORDINGS SECTION
+    ========================== */
+
+    header.record-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:24px;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .logo-small{
+      background:rgba(255,255,255,0.12);
+      padding:10px;
+      border-radius:10px;
+      font-size:18px;
+      width:52px;
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+    }
+
+    .btn{
+      background:white;
+      color:var(--bg1);
+      font-weight:600;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .btn.secondary{
+      background:transparent;
+      color:white;
+      border:1px solid rgba(255,255,255,0.3);
+    }
+
+    /* hero */
+    .hero{
+      display:flex;
+      gap:26px;
+      padding:28px;
+      border-radius:18px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04));
+      margin-bottom:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .hero-left{flex:1;}
+    .hero-right{width:300px;}
+
+    /* recordings cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+      margin-bottom:20px;
+    }
+
+    .record-card{
+      background:white;
+      color:#0f172a;
+      border-radius:14px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 6px 20px rgba(0,0,0,0.18);
+    }
+
+    .thumb{
+      height:150px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),var(--bg2));
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:18px;
+      margin-bottom:12px;
+    }
+
+    .price-row{
+      margin-top:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    /* modal */
+    .modal-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:999;
+      padding:20px;
+    }
+
+    .modal{
+      background:white;
+      color:#111;
+      width:100%;
+      max-width:500px;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 30px 60px rgba(0,0,0,0.4);
+    }
+
+    /* toast */
+    #toast{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      background:#0f172a;
+      color:white;
+      padding:12px 16px;
+      border-radius:10px;
+      display:none;
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================= NAVBAR ======================= -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html" class="active">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="financial_literacy.html">Financial Literacy</a></li>
+        <li><a href="ai_tools.html">AI Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- ====================================================
+         AI FUNDAMENTALS PRESENTATION SECTION
+    ===================================================== -->
+    <div class="slides">
+
+      <section class="slide purple">
+        <h2>Introduction to AI & ML</h2>
+        <p>Welcome! This presentation introduces the fundamentals of Artificial Intelligence and Machine Learning.</p>
+      </section>
+
+      <section class="slide blue">
+        <h3>What is Artificial Intelligence?</h3>
+        <ul>
+          <li>The simulation of human intelligence in machines</li>
+          <li>Applications include problem-solving, speech recognition, and decision-making</li>
+          <li>Can be narrow (specific tasks) or general (broad tasks)</li>
+        </ul>
+      </section>
+
+      <section class="slide purple">
+        <h3>What is Machine Learning?</h3>
+        <ul>
+          <li>A subset of AI that enables systems to learn from data</li>
+          <li>Algorithms improve performance without being explicitly programmed</li>
+          <li>Includes supervised, unsupervised, and reinforcement learning</li>
+        </ul>
+      </section>
+
+      <section class="slide blue">
+        <h3>Types of Machine Learning</h3>
+        <ul>
+          <li>Supervised Learning: labeled data training</li>
+          <li>Unsupervised Learning: discovering patterns in data</li>
+          <li>Reinforcement Learning: learning based on rewards</li>
+        </ul>
+      </section>
+
+      <section class="slide purple">
+        <h3>Popular AI & ML Tools</h3>
+        <ul>
+          <li>TensorFlow, PyTorch, scikit-learn</li>
+          <li>Cloud services: Azure, AWS, Google Cloud</li>
+        </ul>
+      </section>
+
+      <section class="slide blue">
+        <h3>Real-World Applications</h3>
+        <ul>
+          <li>Healthcare</li>
+          <li>Finance</li>
+          <li>Retail</li>
+        </ul>
+      </section>
+
+      <section class="slide purple">
+        <h3>Ethical Considerations</h3>
+        <ul>
+          <li>Bias in data</li>
+          <li>Transparency</li>
+          <li>AI fairness</li>
+        </ul>
+      </section>
+
+    </div>
+
+
+    <!-- ====================================================
+         EMBEDDED RECORDINGS SECTION
+    ===================================================== -->
+    <section id="recordings">
+
+      <header class="record-header">
+        <div class="brand">
+          <div class="logo-small">SIA</div>
+          <div>
+            <div style="font-weight:600;">Skills & Innovation Academy</div>
+            <div style="font-size:12px;opacity:0.8;">Online recordings — Learn with Professor Meena</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- RECORDINGS HERO -->
+      <section class="hero">
+        <div class="hero-left">
+          <h1 style="font-size:28px;font-weight:700;">Artificial Intelligence for Kids — Recorded Sessions</h1>
+          <p style="opacity:0.9;">Three recorded workshops for ages 5–16. Each includes stories, activities, and downloadable files.</p>
+
+          <div style="margin-top:12px;opacity:0.9;">
+            <div><strong>Access:</strong> On-demand recordings</div>
+            <div><strong>Price:</strong> $35 per recording</div>
+          </div>
+
+          <div style="margin-top:18px; display:flex; gap:12px;">
+            <button class="btn secondary" onclick="scrollToSection('rec-list')">View recordings</button>
+            <button class="btn" onclick="openInfo()">How it works</button>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div style="background:rgba(255,255,255,0.12); padding:16px; border-radius:12px;">
+            <div style="background:rgba(255,255,255,0.1); height:160px; border-radius:10px; display:flex; justify-content:center; align-items:center;">
+              🎬 Preview: AI for Kids
+            </div>
+            <p style="margin-top:10px; font-size:13px; opacity:0.85;">
+              Each recording is 45–60 mins with activity sheets.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <!-- RECORDINGS GRID -->
+      <h2 style="margin-top:20px; margin-bottom:10px; font-size:22px;">Recordings — $35 each</h2>
+
+      <div id="rec-list" class="cards">
+
+        <!-- Ages 5–8 -->
+        <article class="record-card">
+          <div class="thumb">AI Ages 5–8</div>
+          <h3>Artificial Intelligence — Ages 5–8</h3>
+          <p>A gentle, story-led introduction to AI.</p>
+          <div class="price-row">
+            <strong>$35</strong>
+            <button class="btn" onclick="openPurchase('AI Ages 5–8', 35)">Buy $35</button>
+          </div>
+        </article>
+
+        <!-- Ages 9–11 -->
+        <article class="record-card">
+          <div class="thumb">AI Ages 9–11</div>
+          <h3>Artificial Intelligence — Ages 9–11</h3>
+          <p>Project-based learning with pattern recognition.</p>
+          <div class="price-row">
+            <strong>$35</strong>
+            <button class="btn" onclick="openPurchase('AI Ages 9–11', 35)">Buy $35</button>
+          </div>
+        </article>
+
+        <!-- Ages 12–16 -->
+        <article class="record-card">
+          <div class="thumb">AI Ages 12–16</div>
+          <h3>Artificial Intelligence — Ages 12–16</h3>
+          <p>Real-world examples and guided coding demo.</p>
+          <div class="price-row">
+            <strong>$35</strong>
+            <button class="btn" onclick="openPurchase('AI Ages 12–16', 35)">Buy $35</button>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+  </main>
+
+
+  <!-- =======================
+       MODAL (Purchase)
+  ======================== -->
+  <div id="modal" class="modal-backdrop">
+    <div class="modal">
+      <button onclick="closeModal()" style="float:right; background:none; border:none; font-size:18px;">✕</button>
+      <h3 id="modal-title">Buy Recording</h3>
+
+      <form onsubmit="return handlePurchase(event)">
+        <div class="field">
+          <label>Recording</label>
+          <input id="recording-name" readonly />
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input id="buyer-email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="field">
+          <label>Price</label>
+          <input id="price" readonly />
+        </div>
+
+        <div style="text-align:right; margin-top:14px;">
+          <button type="button" class="btn secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn">Buy $<span id="modal-price">35</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"></div>
+
+  <!-- =======================
+       JAVASCRIPT
+  ======================== -->
+  <script>
+    const modal = document.getElementById("modal");
+    const toast = document.getElementById("toast");
+
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:"smooth"});
+    }
+
+    function openInfo(){
+      alert("Each recording is sold for $35. After purchase, you will receive a link to watch and download the materials.");
+    }
+
+    function openPurchase(title, price){
+      modal.style.display = "flex";
+      document.getElementById('recording-name').value = title;
+      document.getElementById('price').value = "$" + price;
+      document.getElementById('modal-price').textContent = price;
+    }
+
+    function closeModal(){
+      modal.style.display = "none";
+    }
+
+    function handlePurchase(e){
+      e.preventDefault();
+      closeModal();
+      toast.textContent = "Purchase confirmed! Check your email.";
+      toast.style.display = "block";
+      setTimeout(()=> toast.style.display="none", 3000);
+      return false;
+    }
+  </script>
+
+</body>
+</html>
