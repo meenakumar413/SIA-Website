@@ -1,210 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Agents | Skills & Innovation Academy (SIA)</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Agents | Skills and Innovation Academy (SIA)</title>
   <link rel="stylesheet" href="sia-style.css" />
-
   <style>
-    :root {
-      --primary1: #6a11cb;
-      --primary2: #2575fc;
-      --card-bg: #ffffff;
-      --muted: #6b7280;
-      --glass: rgba(255,255,255,0.1);
-      --max-width: 1100px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, var(--primary1), var(--primary2));
-      color: #fff;
-    }
-
-    /* Container */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Hero Section */
-    .hero {
-      margin-top: 120px;
-      background: rgba(255,255,255,0.08);
-      padding: 40px;
-      border-radius: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .hero-left {
-      flex: 1;
-      min-width: 260px;
-    }
-
-    .hero-left h1 {
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .hero-left p {
-      font-size: 17px;
-      opacity: 0.9;
-    }
-
-    .hero-cta {
-      margin-top: 20px;
-    }
-
-    .btn-primary {
-      background: #fff;
-      color: var(--primary2);
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-    }
-
-    .hero-right {
-      width: 300px;
-      min-width: 240px;
-    }
-
-    .card-preview {
-      background: rgba(255,255,255,0.15);
-      padding: 20px;
-      text-align: center;
+    /* Small helper styles so recordings match slide look */
+    .recordings-wrap { max-width: 1100px; margin: 24px auto 80px; padding: 0 20px; }
+    .recordings-grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .record-slide {
       border-radius: 14px;
-    }
-
-    .preview-thumb {
-      background: rgba(255,255,255,0.1);
-      height: 160px;
-      display: flex;
-      border-radius: 12px;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    /* Section Title */
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin: 40px 0 20px;
-      font-weight: bold;
-    }
-
-    /* Cards Layout */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 24px;
-    }
-
-    .slide-card {
-      background: white;
-      color: #333;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-      transition: transform 0.2s;
-    }
-
-    .slide-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .slide-card h3 {
-      color: var(--primary1);
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .slide-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* Recording Cards */
-    .recording-card {
-      background: rgba(255,255,255,0.2);
-      padding: 20px;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: 0.3s;
-      backdrop-filter: blur(10px);
-      color: white;
-    }
-
-    .recording-card:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .price-tag {
-      margin-top: 10px;
-      display: inline-block;
-      background: #fff;
-      color: #2575fc;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-    }
-
-    .modal-content {
-      background: #fff;
-      color: #333;
-      margin: 10% auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .close-btn {
-      background: #2575fc;
+      padding: 26px;
       color: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      display: inline-block;
       cursor: pointer;
-      margin-top: 20px;
+      transition: transform .18s, box-shadow .18s;
+      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
     }
-
-    footer {
-      text-align: center;
-      margin: 50px 0;
-      color: white;
-      opacity: 0.9;
+    .record-slide:hover { transform: translateY(-6px); background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); }
+    .record-thumb { height: 140px; border-radius: 10px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px; margin-bottom:14px; background: linear-gradient(90deg,#8b5cf6,#2575fc); }
+    .record-title { font-size:18px; margin:0 0 8px; }
+    .record-desc { font-size:14px; opacity:0.92; margin:0 0 12px; }
+    .record-meta { font-size:13px; opacity:0.85; }
+    .price-pill { display:inline-block; margin-top:10px; background:#fff; color:#2575fc; padding:8px 12px; border-radius:8px; font-weight:700; }
+    /* Modal */
+    #recording-modal { display:none; position:fixed; inset:0; background: rgba(2,6,23,0.6); z-index:2000; align-items:center; justify-content:center; }
+    #recording-modal .modal-card { background:#fff; color:#111; max-width:420px; width:92%; padding:20px; border-radius:12px; box-shadow:0 30px 80px rgba(2,6,23,0.4); text-align:center; }
+    .modal-close { display:inline-block; margin-top:14px; padding:10px 14px; background:#2575fc; color:#fff; border-radius:8px; cursor:pointer; text-decoration:none; }
+    /* Make slide-style recording headers match slide colors */
+    .record-slide .record-thumb.small-purple { background: linear-gradient(135deg,#6a11cb,#8b5cf6); }
+    .record-slide .record-thumb.small-blue   { background: linear-gradient(135deg,#2575fc,#6a11cb); }
+    @media (max-width:560px){
+      .hero, .slides { margin-top:80px; padding-left:14px; padding-right:14px; }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- NAVBAR -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
@@ -224,118 +57,172 @@
     </nav>
   </header>
 
-  <div class="container">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <h1>AI Agents</h1>
-        <p>Learn how LLMs, vectors, embeddings, and agent frameworks work. Build smart automated systems with real tools.</p>
-
-        <div class="hero-cta">
-          <button class="btn-primary" onclick="scrollToSection('topics')">View Topics</button>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="card-preview">
-          <div class="preview-thumb">🤖 AI Agents Overview</div>
-          <span>Intermediate • Hands-On • Real Projects</span>
-        </div>
-      </div>
+  <main class="slides" style="margin-top:110px;">
+    <!-- Slide-styled sections matching Generative AI page -->
+    <section class="slide purple">
+      <h2>AI Agents: Learn the Fundamentals First</h2>
+      <p>Mastering fundamentals is essential before building reliable AI agents.</p>
     </section>
 
-    <!-- TOPICS -->
-    <section id="topics">
-      <h2 class="section-title">Topics Covered</h2>
-
-      <div class="cards">
-        <div class="slide-card">
-          <h3>LLM Fundamentals</h3>
-          <p>Understand tokens, context windows, and model behavior.</p>
-        </div>
-
-        <div class="slide-card">
-          <h3>Vector Embeddings</h3>
-          <p>How meaning is stored as numbers for AI memory + search.</p>
-        </div>
-
-        <div class="slide-card">
-          <h3>LangChain Workflows</h3>
-          <p>Building pipelines that connect tools, data, and LLMs.</p>
-        </div>
-
-        <div class="slide-card">
-          <h3>Vector Databases</h3>
-          <p>We explore Pinecone, ChromaDB, and embedding indexing.</p>
-        </div>
-
-        <div class="slide-card">
-          <h3>Agents & Tools</h3>
-          <p>Enable AI to take actions, call APIs, and solve tasks.</p>
-        </div>
-
-        <div class="slide-card">
-          <h3>Prompt Engineering</h3>
-          <p>Use zero-shot, few-shot, structured prompting for agents.</p>
-        </div>
-      </div>
+    <section class="slide blue">
+      <h3>Why Fundamentals Matter</h3>
+      <ul>
+        <li>AI agents rely on foundational concepts</li>
+        <li>Skipping fundamentals leads to confusion</li>
+        <li>Learn before you build</li>
+      </ul>
+      <p class="notes">Many developers rush into building agents without understanding how LLMs work. This slide sets the stage for why that’s risky.</p>
     </section>
 
-    <!-- RECORDINGS -->
-    <section>
-      <h2 class="section-title">AI Agents – Event Recordings</h2>
-
-      <div class="cards">
-        <div class="recording-card" onclick="openModal('AI Agents — Ages 5–8')">
-          <h2>AI Agents — Ages 5–8</h2>
-          <p>Full workshop recording</p>
-          <span class="price-tag">$35</span>
-        </div>
-
-        <div class="recording-card" onclick="openModal('AI Agents — Ages 9–11')">
-          <h2>AI Agents — Ages 9–11</h2>
-          <p>Full workshop recording</p>
-          <span class="price-tag">$35</span>
-        </div>
-
-        <div class="recording-card" onclick="openModal('AI Agents — Ages 12–16')">
-          <h2>AI Agents — Ages 12–16</h2>
-          <p>Full workshop recording</p>
-          <span class="price-tag">$35</span>
-        </div>
-      </div>
+    <section class="slide purple">
+      <h3>How LLMs Work</h3>
+      <ul>
+        <li>LLMs generate responses using tokens</li>
+        <li>Context windows define memory scope</li>
+        <li>Prompt structure affects output</li>
+      </ul>
+      <p class="notes">LLMs process inputs as tokens. Understanding context windows helps you design better prompts and manage memory.</p>
     </section>
 
-  </div>
+    <section class="slide blue">
+      <h3>Embeddings & Vectors</h3>
+      <ul>
+        <li>Embeddings turn words into numbers</li>
+        <li>Vectors enable semantic search</li>
+        <li>Used in AI memory and retrieval</li>
+      </ul>
+      <p class="notes">Embeddings are the backbone of semantic understanding. They allow AI to “remember” and “search” intelligently.</p>
+    </section>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <h2 id="modal-title"></h2>
-      <p>This recording is $35. Payment integration can be added later.</p>
-      <div class="close-btn" onclick="closeModal()">Close</div>
+    <section class="slide purple">
+      <h3>LangChain Overview</h3>
+      <ul>
+        <li>LangChain connects LLMs to tools</li>
+        <li>Modular components for workflows</li>
+        <li>Ideal for building agents</li>
+      </ul>
+      <p class="notes">LangChain is a powerful framework that lets you build agents by chaining together prompts, tools, and memory.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Practice Labs – API Calls</h3>
+      <ul>
+        <li>Make your first API call</li>
+        <li>Understand request/response flow</li>
+        <li>Build confidence with real data</li>
+      </ul>
+      <p class="notes">KodeKloud walks through making an OpenAI API call. This is your first step toward building functional agents.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Prompt Engineering</h3>
+      <ul>
+        <li>Use zero-shot and few-shot prompts</li>
+        <li>Chain-of-thought improves reasoning</li>
+        <li>Test and iterate for clarity</li>
+      </ul>
+      <p class="notes">Prompt engineering is an art. Learn how to guide the model’s thinking with structured inputs.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Vector Databases & RAG</h3>
+      <ul>
+        <li>Tools like ChromaDB and Pinecone</li>
+        <li>Store and retrieve embeddings</li>
+        <li>Retrieve-Augmented Generation (RAG) systems</li>
+      </ul>
+      <p class="notes">Vector DBs and RAG are essential for scalable and accurate agent memory + document Q&A.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>LangGraph & MCP</h3>
+      <ul>
+        <li>LangGraph for multi-step workflows</li>
+        <li>MCP to connect models to external tools</li>
+        <li>Design stateful and reliable agents</li>
+      </ul>
+      <p class="notes">LangGraph visualizes multi-step logic, and MCP enables real-world actions for agents.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Final Takeaways</h3>
+      <ul>
+        <li>Learn fundamentals before tools</li>
+        <li>Practice with real labs</li>
+        <li>Create scalable, intelligent agents</li>
+      </ul>
+      <p class="notes">Build your foundation, then scale your agent development.</p>
+    </section>
+
+    <!-- Back button -->
+    <section class="back-home" style="text-align:center; margin:30px 0;">
+      <a href="index.html" class="cta-button">← Back to Home</a>
+    </section>
+  </main>
+
+  <!-- Recordings section styled as slide-like cards -->
+  <div class="recordings-wrap">
+    <h2 style="color:#fff; text-align:center; margin:18px 0 12px;">AI Agents — Recordings ($35 each)</h2>
+    <div class="recordings-grid">
+      <div class="record-slide" onclick="openRecordingModal('AI Agents — Ages 5–8')">
+        <div class="record-thumb small-purple">Ages 5–8</div>
+        <h3 class="record-title">AI Agents — Ages 5–8</h3>
+        <p class="record-desc">Story-led intro to agents with playful examples (teacher-led).</p>
+        <div class="record-meta">Duration: ~45 mins • Activity sheet included</div>
+        <span class="price-pill">$35</span>
+      </div>
+
+      <div class="record-slide" onclick="openRecordingModal('AI Agents — Ages 9–11')">
+        <div class="record-thumb small-blue">Ages 9–11</div>
+        <h3 class="record-title">AI Agents — Ages 9–11</h3>
+        <p class="record-desc">Project-focused session covering simple agent tasks and experiments.</p>
+        <div class="record-meta">Duration: ~50 mins • Mini-project files</div>
+        <span class="price-pill">$35</span>
+      </div>
+
+      <div class="record-slide" onclick="openRecordingModal('AI Agents — Ages 12–16')">
+        <div class="record-thumb small-purple">Ages 12–16</div>
+        <h3 class="record-title">AI Agents — Ages 12–16</h3>
+        <p class="record-desc">Guided coding demo and agent workflows — beginner-friendly coding.</p>
+        <div class="record-meta">Duration: ~60 mins • Code notebook included</div>
+        <span class="price-pill">$35</span>
+      </div>
     </div>
   </div>
 
-  <footer>
-    © 2025 Skills & Innovation Academy — contact.siaacademy@gmail.com
+  <!-- Modal -->
+  <div id="recording-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <h3 id="modal-recording-title">Recording</h3>
+      <p>This recording is $35. Payment integration can be added later.</p>
+      <a class="modal-close" role="button" onclick="closeRecordingModal()">Close</a>
+    </div>
+  </div>
+
+  <footer style="text-align:center; padding:28px 0; color:#fff;">
+    © 2025 Skills and Innovation Academy (SIA) | contact.siaacademy@gmail.com
   </footer>
 
   <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    function openRecordingModal(title){
+      document.getElementById('modal-recording-title').innerText = title;
+      const modal = document.getElementById('recording-modal');
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeRecordingModal(){
+      const modal = document.getElementById('recording-modal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
     }
 
-    function openModal(title) {
-      document.getElementById("modal-title").innerText = title;
-      document.getElementById("modal").style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
+    // Accessibility: close modal on Escape
+    document.addEventListener('keydown', function(e){
+      const modal = document.getElementById('recording-modal');
+      if(e.key === 'Escape' && modal.style.display === 'flex'){
+        closeRecordingModal();
+      }
+    });
   </script>
-
 </body>
 </html>
