@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI for Kids — Recordings | Skills & Innovation Academy</title>
+  <meta name="description" content="Recordings: Artificial Intelligence for ages 5-8, 9-11, 12-16. Purchase each recording for $35." />
+  <style>
+    /* --- Reset & base --- */
+    :root{
+      --bg1:#5b21b6; /* purple */
+      --bg2:#0ea5e9; /* blue */
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#8b5cf6;
+      --glass: rgba(255,255,255,0.08);
+      --max-width:1100px;
+      --price:35;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#0f172a;
+      background:linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:60px;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:28px;
+    }
+
+    /* --- Header / Hero --- */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      color:white;
+      margin-bottom:24px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      background:rgba(255,255,255,0.12);
+      border-radius:10px;
+      padding:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:56px;
+      height:56px;
+      font-weight:700;
+      font-size:18px;
+    }
+    .site-title{font-size:18px;font-weight:600}
+    .nav-actions{display:flex; gap:12px; align-items:center;}
+    .btn{
+      background:white;
+      color:var(--bg1);
+      font-weight:600;
+      border-radius:10px;
+      padding:10px 14px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(11,15,30,0.12);
+    }
+    .btn.secondary{
+      background:transparent;
+      color:rgba(255,255,255,0.95);
+      border:1px solid rgba(255,255,255,0.12);
+    }
+
+    /* Hero content card */
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border-radius:18px;
+      padding:28px;
+      display:flex;
+      gap:24px;
+      align-items:center;
+      box-shadow:0 10px 30px rgba(2,6,23,0.2);
+      margin-bottom:22px;
+    }
+    .hero-left{flex:1; color:white}
+    .event-title{font-size:28px;margin:0 0 8px 0;font-weight:700;letter-spacing:-0.3px}
+    .event-sub{margin:0;color:rgba(255,255,255,0.9); font-size:15px}
+    .event-meta{margin-top:12px;color:var(--muted); font-size:14px}
+    .hero-cta{display:flex; gap:12px; margin-top:18px}
+
+    .hero-right{
+      width:320px;
+      min-width:220px;
+    }
+    .card-preview{
+      background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      padding:14px;
+      border-radius:12px;
+      color:white;
+      text-align:center;
+    }
+    .preview-thumb{
+      width:100%;
+      height:160px;
+      border-radius:8px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:600;
+      color:rgba(255,255,255,0.85);
+      margin-bottom:10px;
+    }
+    .badge{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;font-size:12px;color:#fff}
+
+    /* --- recordings list --- */
+    .section-title{
+      color:#fff;
+      font-size:20px;
+      margin:20px 0 10px 0;
+      font-weight:700;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:18px;
+    }
+    .record-card{
+      background:linear-gradient(180deg,#fff 0%, #fbfbff 100%);
+      border-radius:12px;
+      padding:14px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.08);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      overflow:hidden;
+    }
+    .thumb{
+      height:150px;
+      border-radius:8px;
+      background:linear-gradient(90deg,var(--accent), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:18px;
+    }
+    .record-title{font-weight:700;font-size:16px;margin:0}
+    .record-desc{color:var(--muted);font-size:13px;margin:0}
+    .price-row{
+      margin-top:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .price{
+      font-weight:800;
+      font-size:18px;
+      color:var(--bg1);
+    }
+    .meta-small{font-size:12px;color:var(--muted)}
+
+    /* --- modal --- */
+    .modal-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(2,6,23,0.45);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:999;
+      padding:20px;
+    }
+    .modal{
+      width:100%;
+      max-width:520px;
+      background:white;
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 30px 80px rgba(2,6,23,0.4);
+    }
+    .modal h3{margin:0 0 8px 0}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    .field label{font-size:13px;color:#111;font-weight:600}
+    .field input, .field select{
+      padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px;
+    }
+    .modal-footer{display:flex;gap:12px;justify-content:flex-end;margin-top:12px}
+    .note{font-size:13px;color:var(--muted)}
+
+    /* small */
+    @media (max-width:640px){
+      .hero{flex-direction:column; align-items:stretch}
+      header{flex-direction:column; align-items:flex-start; gap:12px}
+      .hero-right{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SIA</div>
+        <div>
+          <div class="site-title">Skills & Innovation Academy</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.85)">Online recordings — Learn with Professor Meena</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn secondary" onclick="scrollToSection('recordings')">Recordings</button>
+        <button class="btn" onclick="openSignup()">Sign up</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-left">
+          <h1 class="event-title" id="hero-heading">Artificial Intelligence for Kids — Recorded Sessions</h1>
+          <p class="event-sub">Three recorded workshops, each targeted to an age group. Learn the basics of AI with activities, stories and playful examples.</p>
+
+          <div class="event-meta">
+            <div><strong>Access:</strong> On-demand recordings</div>
+            <div style="margin-top:6px;"><strong>Price:</strong> $<span id="global-price">35</span> per recording</div>
+          </div>
+
+          <div class="hero-cta">
+            <button class="btn" onclick="scrollToSection('recordings')">View recordings</button>
+            <button class="btn secondary" onclick="openInfo()">How it works</button>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="card-preview" aria-hidden="true">
+            <div class="preview-thumb">🎬 Preview: AI for Kids</div>
+            <div style="display:flex;gap:8px;justify-content:center;">
+              <span class="badge">Beginner friendly</span>
+              <span class="badge">Ages 5–16</span>
+            </div>
+            <div style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.85)">
+              Each recording is roughly 45–60 minutes with downloadable activity sheets.
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- recordings -->
+      <section id="recordings" aria-labelledby="recs-heading">
+        <h2 class="section-title" id="recs-heading">Recordings — $35 each</h2>
+
+        <div class="cards" role="list">
+          <!-- card 1 -->
+          <article class="record-card" role="listitem" aria-labelledby="t1">
+            <div class="thumb" aria-hidden="true">AI Ages 5–8</div>
+            <h3 id="t1" class="record-title">Artificial Intelligence — Ages 5–8</h3>
+            <p class="record-desc">A gentle, story-led introduction. Hands-on games, picture activities and simple examples to spark curiosity.</p>
+
+            <div class="meta-small">Duration: 45 mins • Includes activity sheet</div>
+
+            <div class="price-row">
+              <div>
+                <div class="price">$<span class="price-value">35</span></div>
+                <div class="meta-small">One-time purchase — unlimited access</div>
+              </div>
+              <div>
+                <button class="btn" onclick="openPurchase('Artificial Intelligence — Ages 5–8', 35)">Buy $35</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- card 2 -->
+          <article class="record-card" role="listitem" aria-labelledby="t2">
+            <div class="thumb" aria-hidden="true">AI Ages 9–11</div>
+            <h3 id="t2" class="record-title">Artificial Intelligence — Ages 9–11</h3>
+            <p class="record-desc">Project-based session: simple ML ideas, pattern recognition, and a mini project the learners can try at home.</p>
+
+            <div class="meta-small">Duration: 50 mins • Comes with mini-project files</div>
+
+            <div class="price-row">
+              <div>
+                <div class="price">$<span class="price-value">35</span></div>
+                <div class="meta-small">One-time purchase — unlimited access</div>
+              </div>
+              <div>
+                <button class="btn" onclick="openPurchase('Artificial Intelligence — Ages 9–11', 35)">Buy $35</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- card 3 -->
+          <article class="record-card" role="listitem" aria-labelledby="t3">
+            <div class="thumb" aria-hidden="true">AI Ages 12–16</div>
+            <h3 id="t3" class="record-title">Artificial Intelligence — Ages 12–16</h3>
+            <p class="record-desc">Deeper concepts with real-world examples and a guided coding demo (no experience required).</p>
+
+            <div class="meta-small">Duration: 60 mins • Includes code notebook & exercises</div>
+
+            <div class="price-row">
+              <div>
+                <div class="price">$<span class="price-value">35</span></div>
+                <div class="meta-small">One-time purchase — unlimited access</div>
+              </div>
+              <div>
+                <button class="btn" onclick="openPurchase('Artificial Intelligence — Ages 12–16', 35)">Buy $35</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-top:16px;color:#fff;font-size:13px;">Tip: Buy multiple recordings for your classroom — contact us for group discounts.</p>
+      </section>
+
+      <!-- info -->
+      <section style="margin-top:26px;">
+        <h3 style="color:#fff;margin-bottom:8px;">How this works</h3>
+        <p style="color:rgba(255,255,255,0.92);max-width:780px">
+          After you purchase a recording you'll receive an email with a secure link to stream and download the video and any accompanying materials (activity sheets, project files). This demo page uses a mock purchase flow — integrate your preferred payment provider (Stripe, PayPal, Gumroad) to accept payments live.
+        </p>
+        <div style="margin-top:10px;color:rgba(255,255,255,0.85);font-size:13px">
+          <strong>Suggested integration:</strong> Stripe Checkout for one-time payments or Stripe Payment Links. Replace the `mockPurchase()` call in the JS with a call to your server to create a Checkout Session.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal: purchase -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button style="float:right;border:none;background:transparent;font-size:16px;cursor:pointer" aria-label="Close" onclick="closeModal()">✕</button>
+      <h3 id="modal-title">Buy recording</h3>
+      <p class="note" id="modal-note">Complete purchase to get access to the recording and downloadable materials.</p>
+
+      <form id="purchase-form" onsubmit="return handlePurchase(event)">
+        <div class="field">
+          <label for="recording-name">Recording</label>
+          <input id="recording-name" name="recording-name" readonly />
+        </div>
+
+        <div class="field">
+          <label for="buyer-email">Your email</label>
+          <input id="buyer-email" name="buyer-email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="field">
+          <label for="price">Price</label>
+          <input id="price" name="price" readonly />
+        </div>
+
+        <!-- NOTE: In production replace the payment button with Stripe/PayPal flow.
+             This mock flow simply simulates success and returns a download link placeholder. -->
+        <div class="modal-footer">
+          <button type="button" class="btn secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn">Buy $<span id="modal-price">35</span></button>
+        </div>
+
+        <p class="note" style="margin-top:10px">We will send the streaming and download link to the email entered above.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- success toast (simple) -->
+  <div id="toast" style="position:fixed;right:16px;bottom:16px;background:#0f172a;color:white;padding:12px 16px;border-radius:10px;display:none;box-shadow:0 8px 30px rgba(2,6,23,0.35);z-index:1200">
+  </div>
+
+  <script>
+    // --- small JS for UI interactions and mock purchase ---
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalNote = document.getElementById('modal-note');
+    const recordingInput = document.getElementById('recording-name');
+    const priceInput = document.getElementById('price');
+    const modalPriceSpan = document.getElementById('modal-price');
+    const toast = document.getElementById('toast');
+
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function openInfo(){
+      alert("Each recording is sold separately for $35. After purchase you'll get an email with secure links and materials.");
+    }
+
+    function openSignup(){
+      alert("Signup flow placeholder. Replace with your authentication or mailing list integration.");
+    }
+
+    function openPurchase(title, price){
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+      modalTitle.textContent = 'Buy: ' + title;
+      recordingInput.value = title;
+      priceInput.value = '$' + price.toFixed(2);
+      modalPriceSpan.textContent = price.toFixed(2);
+    }
+
+    function closeModal(){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+      document.getElementById('purchase-form').reset();
+    }
+
+    function showToast(msg, ms=3500){
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(()=>{ toast.style.display='none'; }, ms);
+    }
+
+    // Mock purchase handler
+    function handlePurchase(e){
+      e.preventDefault();
+      const email = document.getElementById('buyer-email').value.trim();
+      const recording = recordingInput.value;
+      const price = modalPriceSpan.textContent;
+
+      if(!email || !validateEmail(email)){
+        alert('Please enter a valid email.');
+        return false;
+      }
+
+      // ------------------------
+      // PRODUCTION NOTE:
+      // ------------------------
+      // Replace this block with a call to your server API which creates a payment session (e.g. Stripe Checkout),
+      // then redirect the user to the provider's checkout page. After successful payment, send email with secure links.
+      // Example flow:
+      //   1. POST /create-checkout-session { email, recordingId }
+      //   2. Receive session.url and redirect: window.location = session.url
+      // ------------------------
+
+      // Simulate server call
+      closeModal();
+      showToast('Purchase confirmed — an email with access details will be sent to ' + email);
+      // For demo purposes, open a fake "download" in a new tab after a short delay
+      setTimeout(()=>{
+        const blob = new Blob(
+          ["This is a placeholder file for " + recording + "\\n(Replace with real video or download link from your server)."],
+          {type:'text/plain'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = recording.replace(/\s+/g,'_') + '_access_instructions.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }, 700);
+
+      return false;
+    }
+
+    function validateEmail(email) {
+      // simple regex for email validation
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Accessibility: close modal on Escape
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && modal.style.display === 'flex'){
+        closeModal();
+      }
+    });
+
+    // Set price values dynamically in case you want to change in a single place
+    (function setPrices(){
+      const p = Number(getComputedStyle(document.documentElement).getPropertyValue('--price')) || 35;
+      document.querySelectorAll('.price-value').forEach(el=>el.textContent = p);
+      document.getElementById('global-price').textContent = p;
+    })();
+
+  </script>
+</body>
+</html>
