@@ -2,74 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Generative AI | Skills and Innovation Academy (SIA)</title>
   <link rel="stylesheet" href="sia-style.css" />
   <style>
-    /* Recording section custom styles */
-    .recordings-container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
+    /* --- Recordings & purchase section styling --- */
+    :root{
+      --bg1:#5b21b6; /* purple */
+      --bg2:#0ea5e9; /* blue */
+      --card:#ffffff;
+      --muted:#e0e0e0;
+      --accent:#8b5cf6;
+      --glass: rgba(255,255,255,0.08);
+      --max-width:1100px;
+      --price:35;
     }
-
-    .recording-card {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 25px;
-      backdrop-filter: blur(10px);
-      cursor: pointer;
-      transition: 0.3s;
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color: #fff;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+    a { color: inherit; text-decoration: none; }
 
-    .recording-card:hover {
-      background: rgba(255, 255, 255, 0.25);
+    /* Container */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+    /* Hero / slide consistency */
+    .slide { padding: 50px 20px; border-radius: 16px; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .slide h2, .slide h3 { margin-bottom: 15px; }
+    .purple { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+    .blue { background: linear-gradient(135deg, #2575fc, #6a11cb); }
+    .back-home { text-align:center; margin:30px 0; }
+    .cta-button { background:#fff; color:#2575fc; padding:12px 22px; border-radius:12px; font-weight:600; text-decoration:none; }
+
+    /* Recordings cards section */
+    #recordings { margin-top:40px; }
+    .section-title { font-size:22px; font-weight:700; margin-bottom:20px; color:#fff; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+
+    .record-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border-radius:16px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      cursor:pointer;
+      transition:0.3s;
     }
-
-    .price-tag {
-      margin-top: 10px;
-      display: inline-block;
-      background: #fff;
-      color: #2575fc;
-      padding: 6px 12px;
-      font-weight: bold;
-      border-radius: 8px;
-      font-size: 14px;
+    .record-card:hover { background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05)); }
+    .thumb {
+      height:140px;
+      border-radius:12px;
+      background: linear-gradient(90deg, var(--accent), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:18px;
     }
+    .record-title { font-size:16px; font-weight:700; margin:0; }
+    .record-desc { font-size:14px; color: var(--muted); }
+    .price-row { display:flex; justify-content:space-between; align-items:center; margin-top:auto; }
+    .price { font-weight:800; font-size:18px; color:#fff; }
 
+    /* Modal */
+    .modal-backdrop {
+      position:fixed; inset:0;
+      display:none; align-items:center; justify-content:center;
+      background: rgba(0,0,0,0.6); z-index:9999;
+    }
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      width:100%; max-width:500px; background:#fff; border-radius:16px; padding:20px; color:#111;
     }
-
-    .modal-content {
-      background: #fff;
-      color: #333;
-      margin: 10% auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .close-btn {
-      background: #2575fc;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 20px;
-      display: inline-block;
-    }
+    .modal h3 { margin-top:0; }
+    .field { margin-bottom:12px; display:flex; flex-direction:column; gap:6px; }
+    .field input { padding:10px 12px; border-radius:8px; border:1px solid #ccc; font-size:14px; }
+    .modal-footer { display:flex; justify-content:flex-end; gap:12px; margin-top:12px; }
+    .btn { padding:10px 14px; border:none; border-radius:10px; cursor:pointer; font-weight:600; }
+    .btn.secondary { background:#ddd; color:#111; }
   </style>
 </head>
 <body>
@@ -93,13 +108,12 @@
     </nav>
   </header>
 
-  <!-- Slides Section -->
-  <main class="slides" style="margin-top:110px;">
+  <main class="container">
+    <!-- Generative AI slides -->
     <section class="slide purple">
       <h2>Introduction to Generative AI</h2>
       <p>Welcome! This presentation introduces key concepts of Generative AI.</p>
     </section>
-
     <section class="slide blue">
       <h3>What Is Generative AI?</h3>
       <ul>
@@ -107,9 +121,7 @@
         <li>Examples: text, images, music, code</li>
         <li>Powered by deep learning models</li>
       </ul>
-      <p class="notes">Generative AI goes beyond prediction—it generates original outputs based on learned patterns.</p>
     </section>
-
     <section class="slide purple">
       <h3>Real-World Applications</h3>
       <ul>
@@ -117,9 +129,7 @@
         <li>Image and video generation</li>
         <li>Code completion and debugging</li>
       </ul>
-      <p class="notes">From customer service to creative industries, generative AI is transforming how we work and interact.</p>
     </section>
-
     <section class="slide blue">
       <h3>Key Technologies</h3>
       <ul>
@@ -127,9 +137,7 @@
         <li>Large Language Models (LLMs)</li>
         <li>Training on massive datasets</li>
       </ul>
-      <p class="notes">These technologies enable machines to understand and replicate human-like creativity.</p>
     </section>
-
     <section class="slide purple">
       <h3>Popular Tools</h3>
       <ul>
@@ -137,9 +145,7 @@
         <li>Hugging Face Transformers</li>
         <li>Google Bard, Meta LLaMA</li>
       </ul>
-      <p class="notes">These tools make generative AI accessible to developers, educators, and creators.</p>
     </section>
-
     <section class="slide blue">
       <h3>Ethical Considerations</h3>
       <ul>
@@ -147,18 +153,14 @@
         <li>Copyright and originality</li>
         <li>Misinformation risks</li>
       </ul>
-      <p class="notes">With great power comes responsibility—ethical design and usage are essential.</p>
     </section>
-
     <section class="slide purple">
       <h3>Course Structure</h3>
       <ul>
         <li>Hands-on demos and coding</li>
         <li>Community support and Q&A</li>
       </ul>
-      <p class="notes">The course is structured to build your understanding step-by-step, with practical examples.</p>
     </section>
-
     <section class="slide blue">
       <h3>Final Takeaways</h3>
       <ul>
@@ -166,56 +168,99 @@
         <li>Explore real-world tools</li>
         <li>Practice with guided labs</li>
       </ul>
-      <p class="notes">This is just the beginning—continue learning and experimenting to unlock the full potential of generative AI.</p>
     </section>
 
-    <!-- Event Recordings Section -->
-    <section class="slide purple">
-      <h2>Generative AI – Event Recordings</h2>
-      <div class="recordings-container">
+    <!-- Recordings Section -->
+    <section id="recordings">
+      <h2 class="section-title">Generative AI – Recorded Sessions</h2>
+      <div class="cards">
+        <!-- Ages 5-8 -->
+        <article class="record-card" onclick="openPurchase('Generative AI — Ages 5–8', 35)">
+          <div class="thumb">Ages 5–8</div>
+          <h3 class="record-title">Generative AI — Ages 5–8</h3>
+          <p class="record-desc">Gentle, story-led introduction. Hands-on games and simple examples.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
 
-        <div class="recording-card" onclick="openModal('Generative AI — Ages 5–8')">
-          <h3>Generative AI — Ages 5–8</h3>
-          <p>Full workshop recording</p>
-          <span class="price-tag">$35</span>
-        </div>
+        <!-- Ages 9-11 -->
+        <article class="record-card" onclick="openPurchase('Generative AI — Ages 9–11', 35)">
+          <div class="thumb">Ages 9–11</div>
+          <h3 class="record-title">Generative AI — Ages 9–11</h3>
+          <p class="record-desc">Project-based session: pattern recognition and mini projects.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
 
-        <div class="recording-card" onclick="openModal('Generative AI — Ages 9–11')">
-          <h3>Generative AI — Ages 9–11</h3>
-          <p>Full workshop recording</p>
-          <span class="price-tag">$35</span>
-        </div>
-
-        <div class="recording-card" onclick="openModal('Generative AI — Ages 12–16')">
-          <h3>Generative AI — Ages 12–16</h3>
-          <p>Full workshop recording</p>
-          <span class="price-tag">$35</span>
-        </div>
-
+        <!-- Ages 12-16 -->
+        <article class="record-card" onclick="openPurchase('Generative AI — Ages 12–16', 35)">
+          <div class="thumb">Ages 12–16</div>
+          <h3 class="record-title">Generative AI — Ages 12–16</h3>
+          <p class="record-desc">Deeper concepts with coding demo and real-world examples.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
       </div>
-    </section>
-
-    <section class="back-home">
-      <a href="index.html" class="cta-button">Back to Home</a>
     </section>
   </main>
 
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <h2 id="modal-title"></h2>
-      <p>This recording is $35. Payment integration can be added later.</p>
-      <div class="close-btn" onclick="closeModal()">Close</div>
+  <!-- Purchase modal -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal">
+      <button style="float:right;border:none;background:transparent;font-size:16px;cursor:pointer" aria-label="Close" onclick="closeModal()">✕</button>
+      <h3 id="modal-title">Buy recording</h3>
+      <form id="purchase-form" onsubmit="return handlePurchase(event)">
+        <div class="field">
+          <label>Recording</label>
+          <input id="recording-name" readonly />
+        </div>
+        <div class="field">
+          <label>Your Email</label>
+          <input id="buyer-email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label>Price</label>
+          <input id="price" readonly />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn">Buy</button>
+        </div>
+      </form>
     </div>
   </div>
 
   <script>
-    function openModal(title) {
-      document.getElementById("modal-title").innerText = title;
-      document.getElementById("modal").style.display = "block";
+    const modal = document.getElementById('modal');
+    const recordingInput = document.getElementById('recording-name');
+    const priceInput = document.getElementById('price');
+
+    function openPurchase(title, price){
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+      recordingInput.value = title;
+      priceInput.value = '$' + price.toFixed(2);
     }
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
+
+    function closeModal(){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+      document.getElementById('purchase-form').reset();
+    }
+
+    function handlePurchase(e){
+      e.preventDefault();
+      const email = document.getElementById('buyer-email').value.trim();
+      if(!email) return alert('Enter a valid email.');
+      closeModal();
+      alert('Purchase confirmed. Access details sent to ' + email);
+      return false;
     }
   </script>
 </body>
