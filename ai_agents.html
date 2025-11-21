@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Agents & AI for Kids | SIA AI Portal</title>
+  <meta name="description" content="Learn AI fundamentals, build AI agents, and explore AI for kids. Recorded sessions and practical exercises." />
+  <link rel="stylesheet" href="sia-style.css" />
+  <style>
+    :root{
+      --bg1:#5b21b6; /* purple */
+      --bg2:#0ea5e9; /* blue */
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#8b5cf6;
+      --glass: rgba(255,255,255,0.08);
+      --max-width:1100px;
+      --price:35;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#0f172a; background:linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 100%); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; padding-bottom:60px;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max-width); margin:0 auto; padding:28px;}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; color:white; margin-bottom:24px;}
+    .brand{display:flex; gap:12px; align-items:center;}
+    .logo{background:rgba(255,255,255,0.12); border-radius:10px; padding:10px; display:flex; align-items:center; justify-content:center; width:56px; height:56px; font-weight:700; font-size:18px;}
+    .site-title{font-size:18px;font-weight:600}
+    .nav-actions{display:flex; gap:12px; align-items:center;}
+    .btn{background:white; color:var(--bg1); font-weight:600; border-radius:10px; padding:10px 14px; border:none; cursor:pointer; box-shadow:0 6px 18px rgba(11,15,30,0.12);}
+    .btn.secondary{background:transparent; color:rgba(255,255,255,0.95); border:1px solid rgba(255,255,255,0.12);}
+    .slides .slide{padding:36px 24px; border-radius:16px; margin-bottom:20px; color:white; max-width:var(--max-width); margin-left:auto; margin-right:auto;}
+    .slides .purple{background:linear-gradient(135deg,#5b21b6,#8b5cf6);}
+    .slides .blue{background:linear-gradient(135deg,#0ea5e9,#3b82f6);}
+    .slides h2,h3{margin-top:0;}
+    .slides ul{margin:8px 0 0 20px;}
+    .notes{font-size:13px;color:rgba(255,255,255,0.8); margin-top:6px;}
+    /* Hero & Recordings */
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); border-radius:18px; padding:28px; display:flex; gap:24px; align-items:center; box-shadow:0 10px 30px rgba(2,6,23,0.2); margin-bottom:22px; color:white;}
+    .hero-left{flex:1;}
+    .event-title{font-size:28px;margin:0 0 8px 0;font-weight:700;letter-spacing:-0.3px}
+    .event-sub{margin:0;color:rgba(255,255,255,0.9); font-size:15px}
+    .event-meta{margin-top:12px;color:var(--muted); font-size:14px}
+    .hero-cta{display:flex; gap:12px; margin-top:18px}
+    .hero-right{width:320px; min-width:220px;}
+    .card-preview{background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); padding:14px; border-radius:12px; color:white; text-align:center;}
+    .preview-thumb{width:100%; height:160px; border-radius:8px; background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); display:flex; align-items:center; justify-content:center; font-weight:600; color:rgba(255,255,255,0.85); margin-bottom:10px;}
+    .badge{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;font-size:12px;color:#fff}
+    .section-title{color:#fff; font-size:20px; margin:20px 0 10px 0; font-weight:700;}
+    .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:18px;}
+    .record-card{background:linear-gradient(180deg,#fff 0%, #fbfbff 100%); border-radius:12px; padding:14px; box-shadow:0 6px 18px rgba(2,6,23,0.08); display:flex; flex-direction:column; gap:12px; overflow:hidden;}
+    .thumb{height:150px; border-radius:8px; background:linear-gradient(90deg,var(--accent), var(--bg2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px;}
+    .record-title{font-weight:700;font-size:16px;margin:0}
+    .record-desc{color:var(--muted);font-size:13px;margin:0}
+    .price-row{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:12px;}
+    .price{font-weight:800;font-size:18px;color:var(--bg1);}
+    .meta-small{font-size:12px;color:var(--muted);}
+    @media (max-width:640px){.hero{flex-direction:column; align-items:stretch} header{flex-direction:column; align-items:flex-start; gap:12px} .hero-right{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SIA</div>
+        <div>
+          <div class="site-title">Skills & Innovation Academy</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.85)">Learn AI with Professor Meena</div>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="index.html" class="btn secondary">Home</a>
+        <button class="btn secondary" onclick="scrollToSection('recordings')">Recordings</button>
+        <button class="btn" onclick="openSignup()">Sign up</button>
+      </div>
+    </header>
+
+    <!-- Hero for AI for Kids -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <h1 class="event-title" id="hero-heading">Artificial Intelligence for Kids — Recorded Sessions</h1>
+        <p class="event-sub">Three recorded workshops for ages 5–8, 9–11, 12–16. Learn AI with activities, stories, and playful examples.</p>
+        <div class="event-meta">
+          <div><strong>Access:</strong> On-demand recordings</div>
+          <div style="margin-top:6px;"><strong>Price:</strong> $<span id="global-price">35</span> per recording</div>
+        </div>
+        <div class="hero-cta">
+          <button class="btn" onclick="scrollToSection('recordings')">View recordings</button>
+          <button class="btn secondary" onclick="openInfo()">How it works</button>
+        </div>
+      </div>
+      <aside class="hero-right">
+        <div class="card-preview" aria-hidden="true">
+          <div class="preview-thumb">🎬 Preview: AI for Kids</div>
+          <div style="display:flex;gap:8px;justify-content:center;">
+            <span class="badge">Beginner friendly</span>
+            <span class="badge">Ages 5–16</span>
+          </div>
+          <div style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.85)">Each recording is roughly 45–60 mins with downloadable activity sheets.</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- AI Agents Slides -->
+    <main class="slides">
+      <section class="slide purple">
+        <h2>AI Agents: Learn the Fundamentals First</h2>
+        <p>Mastering fundamentals is essential before building AI agents.</p>
+      </section>
+      <section class="slide blue">
+        <h3>Why Fundamentals Matter</h3>
+        <ul>
+          <li>AI agents rely on foundational concepts</li>
+          <li>Skipping fundamentals leads to confusion</li>
+          <li>Learn before you build</li>
+        </ul>
+        <p class="notes">Many developers rush into building agents without understanding how LLMs work. This slide sets the stage for why that’s risky.</p>
+      </section>
+      <section class="slide purple">
+        <h3>How LLMs Work</h3>
+        <ul>
+          <li>LLMs generate responses using tokens</li>
+          <li>Context windows define memory scope</li>
+          <li>Prompt structure affects output</li>
+        </ul>
+        <p class="notes">LLMs process inputs as tokens. Understanding context windows helps you design better prompts and manage memory.</p>
+      </section>
+      <section class="slide blue">
+        <h3>Embeddings & Vectors</h3>
+        <ul>
+          <li>Embeddings turn words into numbers</li>
+          <li>Vectors enable semantic search</li>
+          <li>Used in AI memory and retrieval</li>
+        </ul>
+        <p class="notes">Embeddings are the backbone of semantic understanding. They allow AI to “remember” and “search” intelligently.</p>
+      </section>
+      <section class="slide purple">
+        <h3>LangChain Overview</h3>
+        <ul>
+          <li>LangChain connects LLMs to tools</li>
+          <li>Modular components for workflows</li>
+          <li>Ideal for building agents</li>
+        </ul>
+        <p class="notes">LangChain is a powerful framework that lets you build agents by chaining together prompts, tools, and memory.</p>
+      </section>
+      <section class="slide blue">
+        <h3>Practice Labs – API Calls</h3>
+        <ul>
+          <li>Make your first API call</li>
+          <li>Understand request/response flow</li>
+          <li>Build confidence with real data</li>
+        </ul>
+        <p class="notes">KodeKloud walks through making an OpenAI API call. This is your first step toward building functional agents.</p>
+      </section>
+      <section class="slide purple">
+        <h3>Prompt Engineering</h3>
+        <ul>
+          <li>Use zero-shot and few-shot prompts</li>
+          <li>Chain-of-thought improves reasoning</li>
+          <li>Test and iterate for clarity</li>
+        </ul>
+        <p class="notes">Prompt engineering is an art. Learn how to guide the model’s thinking with structured inputs.</p>
+      </section>
+      <section class="slide blue">
+        <h3>Vector Databases & RAG</h3>
+        <ul>
+          <li>Tools like ChromaDB and Pinecone</li>
+          <li>Store and retrieve embeddings</li>
+          <li>Retrieve-Augmented Generation (RAG) systems</li>
+        </ul>
+        <p class="notes">Vector DBs and RAG are essential for scalable and accurate agent memory + document Q&A.</p>
+      </section>
+      <section class="slide purple">
+        <h3>LangGraph & MCP</h3>
+        <ul>
+          <li>LangGraph for multi-step workflows</li>
+          <li>MCP to connect models to external tools</li>
+          <li>Design stateful and reliable agents</li>
+        </ul>
+        <p class="notes">LangGraph visualizes multi-step logic, and MCP enables real-world actions for agents.</p>
+      </section>
+      <section class="slide blue">
+        <h3>Final Takeaways</h3>
+        <ul>
+          <li>Learn fundamentals before tools</li>
+          <li>Practice with real labs</li>
+          <li>Create scalable, intelligent agents</li>
+        </ul>
+        <p class="notes">Build your foundation, then scale your agent development.</p>
+      </section>
+    </main>
+
+    <!-- AI for Kids Recordings -->
+    <section id="recordings" aria-labelledby="recs-heading">
+      <h2 class="section-title" id="recs-heading">Recordings — $35 each</h2>
+      <div class="cards" role="list">
+        <article class="record-card" role="listitem" aria-labelledby="t1">
+          <div class="thumb" aria-hidden="true">AI Ages 5–8</div>
+          <h3 id="t1" class="record-title">Artificial Intelligence — Ages 5–8</h3>
+          <p class="record-desc">A gentle, story-led introduction. Hands-on games, picture activities and simple examples to spark curiosity.</p>
+          <div class="meta-small">Duration: 45 mins • Includes activity sheet</div>
+          <div class="price-row">
+            <div><div class="price">$<span class="price-value">35</span></div><div class="meta-small">One-time purchase — unlimited access</div></div>
+            <div><button class="btn" onclick="openPurchase('Artificial Intelligence — Ages 5–8', 35)">Buy $35</button></div>
+          </div>
+        </article>
+        <article class="record-card" role="listitem" aria-labelledby="t2">
+          <div class="thumb" aria-hidden="true">AI Ages 9–11</div>
+          <h3 id="t2" class="record-title">Artificial Intelligence — Ages 9–11</h3>
+          <p class="record-desc">Project-based session: simple ML ideas, pattern recognition, and a mini project the learners can try at home.</p>
+          <div class="meta-small">Duration: 50 mins • Comes with mini-project files</div>
+          <div class="price-row">
+            <div><div class="price">$<span class="price-value">35</span></div><div class="meta-small">One-time purchase — unlimited access</div></div>
+            <div><button class="btn" onclick="openPurchase('Artificial Intelligence — Ages 9–11', 35)">Buy $35</button></div>
+          </div>
+        </article>
+        <article class="record-card" role="listitem" aria-labelledby="t3">
+          <div class="thumb" aria-hidden="true">AI Ages 12–16</div>
+          <h3 id="t3" class="record-title">Artificial Intelligence — Ages 12–16</h3>
+          <p class="record-desc">Deeper concepts with real-world examples and a guided coding demo (no experience required).</p>
+          <div class="meta-small">Duration: 60 mins • Includes code notebook & exercises</div>
+          <div class="price-row">
+            <div><div class="price">$<span class="price-value">35</span></div><div class="meta-small">One-time purchase — unlimited access</div></div>
+            <div><button class="btn" onclick="openPurchase('Artificial Intelligence — Ages 12–16', 35)">Buy $35</button></div>
+          </div>
+        </article>
+      </div>
+      <p style="margin-top:16px;color:#fff;font-size:13px;">Tip: Buy multiple recordings for your classroom — contact us for group discounts.</p>
+    </section>
+
+    <!-- How it works -->
+    <section style="margin-top:26px;">
+      <h3 style="color:#fff;margin-bottom:8px;">How this works</h3>
+      <p style="color:rgba(255,255,255,0.92);max-width:780px">
+        After you purchase a recording you'll receive an email with a secure link to stream and download the video and any accompanying materials (activity sheets, project files). This demo page uses a mock purchase flow — integrate your preferred payment provider to accept payments live.
+      </p>
+      <div style="margin-top:10px;color:rgba(255,255,255,0.85);font-size:13px">
+        <strong>Suggested integration:</strong> Stripe Checkout or Payment Links. Replace the `mockPurchase()` call in JS with your server integration.
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal & toast -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button style="float:right;border:none;background:transparent;font-size:16px;cursor:pointer" aria-label="Close" onclick="closeModal()">✕</button>
+      <h3 id="modal-title">Buy recording</h3>
+      <p class="note" id="modal-note">Complete purchase to get access to the recording and downloadable materials.</p>
+      <form id="purchase-form" onsubmit="return handlePurchase(event)">
+        <div class="field">
+          <label for="recording-name">Recording</label>
+          <input id="recording-name" name="recording-name" readonly />
+        </div>
+        <div class="field">
+          <label for="buyer-email">Your email</label>
+          <input id="buyer-email" name="buyer-email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label for="price">Price</label>
+          <input id="price" name="price" readonly />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn">Buy $<span id="modal-price">35</span></button>
+        </div>
+        <p class="note" style="margin-top:10px">We will send the streaming and download link to the email entered above.</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" style="position:fixed;right:16px;bottom:16px;background:#0f172a;color:white;padding:12px 16px;border-radius:10px;display:none;box-shadow:0 8px 30px rgba(2,6,23,0.35);z-index:1200"></div>
+
+  <footer style="text-align:center;margin-top:32px;color:white;">
+    <p>© 2025 Skills and Innovation Academy | contact.siaacademy@gmail.com</p>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const recordingInput = document.getElementById('recording-name');
+    const priceInput = document.getElementById('price');
+    const modalPriceSpan = document.getElementById('modal-price');
+    const toast = document.getElementById('toast');
+
+    function scrollToSection(id){const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth', block:'start'});}
+    function openInfo(){alert("Each recording is sold separately for $35. After purchase you'll get an email with secure links and materials.");}
+    function openSignup(){alert("Signup flow placeholder. Replace with your authentication or mailing list integration.");}
+    function openPurchase(title, price){modal.style.display='flex'; modal.setAttribute('aria-hidden','false'); modalTitle.textContent='Buy: '+title; recordingInput.value=title; priceInput.value='$'+price.toFixed(2); modalPriceSpan.textContent=price.toFixed(2);}
+    function closeModal(){modal.style.display='none'; modal.setAttribute('aria-hidden','true'); document.getElementById('purchase-form').reset();}
+    function showToast(msg, ms=3500){toast.textContent=msg; toast.style.display='block'; setTimeout(()=>{ toast.style.display='none'; }, ms);}
+    function handlePurchase(e){
+      e.preventDefault();
+      const email=document.getElementById('buyer-email').value.trim();
+      const recording=recordingInput.value;
+      if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Please enter a valid email.'); return false;}
+      closeModal(); showToast('Purchase confirmed — an email with access details will be sent to '+email);
+      setTimeout(()=>{
+        const blob=new Blob(["Placeholder file for "+recording],{type:'text/plain'});
+        const url=URL.createObjectURL(blob);
+        const a=document.createElement('a'); a.href=url; a.download=recording.replace(/\s+/g,'_')+'_access.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+      },700);
+      return false;
+    }
+    document.addEventListener('keydown', function(e){if(e.key==='Escape' && modal.style.display==='flex'){closeModal();}});
+    (function setPrices(){
+      const p=Number(getComputedStyle(document.documentElement).getPropertyValue('--price'))||35;
+      document.querySelectorAll('.price-value').forEach(el=>el.textContent=p);
+      document.getElementById('global-price').textContent=p;
+    })();
+  </script>
+</body>
+</html>
