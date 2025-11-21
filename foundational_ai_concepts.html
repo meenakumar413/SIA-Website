@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Foundational AI Concepts | Skills and Innovation Academy (SIA)</title>
+  <link rel="stylesheet" href="sia-style.css" />
+
+  <style>
+    /* --- Recordings cards styling --- */
+    :root{
+      --bg1:#5b21b6; /* purple */
+      --bg2:#0ea5e9; /* blue */
+      --muted:#e0e0e0;
+      --accent:#8b5cf6;
+    }
+    body { color:#fff; }
+
+    .recordings-section { margin:50px 0; }
+    .section-title { font-size:22px; font-weight:700; margin-bottom:20px; color:#fff; text-align:center; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+
+    .record-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border-radius:16px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .record-card:hover { background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05)); }
+
+    .thumb {
+      height:140px;
+      border-radius:12px;
+      background: linear-gradient(90deg, var(--accent), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:18px;
+    }
+
+    .record-title { font-size:16px; font-weight:700; margin:0; }
+    .record-desc { font-size:14px; color: var(--muted); }
+    .price-row { display:flex; justify-content:space-between; align-items:center; margin-top:auto; }
+    .price { font-weight:800; font-size:18px; color:#fff; }
+
+    .btn { padding:10px 14px; border:none; border-radius:10px; cursor:pointer; font-weight:600; background:#fff; color:#5b21b6; }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="ai_tools.html">AI Tools</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html" class="active">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="financial_literacy.html">Financial Literacy</a></li>
+        <li><a href="contact.html">Contact</a></li> 
+      </ul>
+    </nav>
+  </header>
+
+  <main class="slides" style="margin-top:110px;">
+
+    <!-- Slides identical style to Generative AI -->
+
+    <section class="slide purple">
+      <h2>Foundational AI Concepts</h2>
+      <p>Welcome! This deck introduces foundational essential AI concepts for engineers and learners, helping build a shared vocabulary for designing intelligent systems.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Why Learn AI Foundational Concepts?</h3>
+      <ul>
+        <li>Engineers must communicate clearly</li>
+        <li>Concepts span across ML, NLP, and agentic systems</li>
+        <li>Foundation for designing scalable AI</li>
+      </ul>
+      <p class="notes">Understanding these terms helps teams collaborate and innovate effectively in AI-driven environments.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Key AI Categories</h3>
+      <ul>
+        <li>Generative AI and NLP</li>
+        <li>Transformers and LLMs</li>
+        <li>Agentic architectures and APIs</li>
+      </ul>
+    </section>
+
+    <section class="slide blue">
+      <h3>Transformers & LLMs</h3>
+      <ul>
+        <li>Transformers enable parallel processing</li>
+        <li>LLMs generate human-like text</li>
+        <li>Context windows and tokenization matter</li>
+      </ul>
+      <p class="notes">These models power tools like ChatGPT and are central to generative AI.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Prompt Engineering</h3>
+      <ul>
+        <li>Zero-shot vs. few-shot prompting</li>
+        <li>Chain-of-thought reasoning</li>
+        <li>Role of temperature and max tokens</li>
+      </ul>
+      <p class="notes">Prompt design influences model behavior—critical for accuracy and relevance.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>RAG vs Fine-Tuning</h3>
+      <ul>
+        <li>RAG: Combines retrieval with generation</li>
+        <li>Fine-tuning: Customizes model behavior</li>
+        <li>Trade-offs in flexibility and control</li>
+      </ul>
+      <p class="notes">Choose the right strategy based on your data, use case, and performance needs.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Model Context Protocol (MCP)</h3>
+      <ul>
+        <li>MCP enables external tool access</li>
+        <li>Used in agentic workflows</li>
+        <li>Supports real-world actions like booking or emailing</li>
+      </ul>
+      <p class="notes">MCP is a bridge between AI models and external systems—key for building intelligent agents.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Designing APIs for AI</h3>
+      <ul>
+        <li>REST vs. GraphQL</li>
+        <li>Authentication and security</li>
+        <li>API design for agentic systems</li>
+      </ul>
+      <p class="notes">APIs must be robust and secure to support AI-driven automation and decision-making.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Limits of AI</h3>
+      <ul>
+        <li>AGI is still aspirational</li>
+        <li>Bias and hallucination risks</li>
+        <li>Importance of human oversight</li>
+      </ul>
+      <p class="notes">AI is powerful but not perfect—ethical design and human-in-the-loop systems are essential.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Final Takeaways</h3>
+      <ul>
+        <li>Master foundational concepts</li>
+        <li>Build with clarity and purpose</li>
+        <li>Stay updated with evolving tools</li>
+      </ul>
+      <p class="notes">These concepts are your toolkit for navigating and contributing to the future of AI.</p>
+    </section>
+
+    <!-- Recordings section -->
+    <section class="recordings-section">
+      <h2 class="section-title">Foundational AI Concepts – Recorded Sessions</h2>
+      <div class="cards">
+
+        <article class="record-card">
+          <div class="thumb">Ages 5–8</div>
+          <h3 class="record-title">Foundational AI Concepts — Ages 5–8</h3>
+          <p class="record-desc">Simple stories and examples introducing core AI ideas in a playful way.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+        <article class="record-card">
+          <div class="thumb">Ages 9–11</div>
+          <h3 class="record-title">Foundational AI Concepts — Ages 9–11</h3>
+          <p class="record-desc">Concept-first explanations with relatable real-life examples.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+        <article class="record-card">
+          <div class="thumb">Ages 12–16</div>
+          <h3 class="record-title">Foundational AI Concepts — Ages 12–16</h3>
+          <p class="record-desc">Clear breakdowns of LLMs, prompts, and systems thinking for teens.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="back-home">
+      <a href="index.html" class="cta-button">Back to Home</a>
+    </section>
+
+  </main>
+
+</body>
+</html>
