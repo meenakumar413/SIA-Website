@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Microsoft Copilot | Skills and Innovation Academy (SIA)</title>
+  <link rel="stylesheet" href="sia-style.css" />
+  <style>
+    /* --- Combined additional styles for recordings --- */
+    :root{
+      --bg1:#5b21b6;
+      --bg2:#0ea5e9;
+      --accent:#8b5cf6;
+      --muted:#e0e0e0;
+      --price:35;
+    }
+    body { color:#fff; }
+
+    /* Recordings section */
+    .recordings-section { margin:50px 0; }
+    .section-title { font-size:22px; font-weight:700; margin-bottom:20px; color:#fff; text-align:center; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+
+    .record-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border-radius:16px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .record-card:hover { background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05)); }
+
+    .thumb {
+      height:140px;
+      border-radius:12px;
+      background: linear-gradient(90deg, var(--accent), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:18px;
+    }
+
+    .record-title { font-size:16px; font-weight:700; margin:0; }
+    .record-desc { font-size:14px; color: var(--muted); }
+    .price-row { display:flex; justify-content:space-between; align-items:center; margin-top:auto; }
+    .price { font-weight:800; font-size:18px; color:#fff; }
+    .btn { padding:10px 14px; border:none; border-radius:10px; cursor:pointer; font-weight:600; background:#fff; color:#5b21b6; }
+
+    /* Modal & toast styles (copied from recordings page) */
+    .modal-backdrop{position:fixed; inset:0; background:rgba(2,6,23,0.45); display:none; align-items:center; justify-content:center; z-index:999; padding:20px;}
+    .modal{width:100%; max-width:520px; background:white; border-radius:12px; padding:18px; box-shadow:0 30px 80px rgba(2,6,23,0.4);}
+    .modal h3{margin:0 0 8px 0}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    .field label{font-size:13px;color:#111;font-weight:600}
+    .field input{padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px;}
+    .modal-footer{display:flex;gap:12px;justify-content:flex-end;margin-top:12px}
+    .note{font-size:13px;color:#6b7280}
+    #toast{position:fixed;right:16px;bottom:16px;background:#0f172a;color:white;padding:12px 16px;border-radius:10px;display:none;box-shadow:0 8px 30px rgba(2,6,23,0.35);z-index:1200}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo" /></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="ai_tools.html">AI Tools</a></li>
+        <li><a href="microsoft_copilot.html" class="active">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="financial_literacy.html">Financial Literacy</a></li>
+        <li><a href="contact.html">Contact</a></li>  
+      </ul>
+    </nav>
+  </header>
+
+  <main class="slides" style="margin-top:110px;">
+    <!-- Microsoft Copilot slides -->
+    <section class="slide purple">
+      <h2>Streamlining Your Work with Microsoft Copilot</h2>
+      <p>Welcome! This session explores how Microsoft Copilot can enhance productivity across daily workflows, from writing to data analysis.</p>
+    </section>
+    <section class="slide blue">
+      <h3>What Is Microsoft Copilot?</h3>
+      <ul>
+        <li>Integrated into Microsoft 365 apps</li>
+        <li>Uses natural language to assist tasks</li>
+        <li>Available on web, desktop, and mobile</li>
+      </ul>
+      <p class="notes">Copilot is embedded in tools like Word, Excel, and Outlook, helping users complete tasks faster using AI.</p>
+    </section>
+    <section class="slide purple">
+      <h3>Core Chat Functions</h3>
+      <ul>
+        <li>Ask simple or complex questions</li>
+        <li>Get citations for fact-checking</li>
+        <li>Save responses to editable pages</li>
+      </ul>
+      <p class="notes">Copilot Chat is versatile—great for brainstorming, research, and organizing ideas with traceable sources.</p>
+    </section>
+    <section class="slide blue">
+      <h3>Prompt Engineering</h3>
+      <ul>
+        <li>Use clear, specific language</li>
+        <li>Try step-by-step instructions</li>
+        <li>Combine voice and text input</li>
+      </ul>
+      <p class="notes">The better your prompt, the better the output. Copilot supports both typed and spoken prompts.</p>
+    </section>
+    <section class="slide purple">
+      <h3>Content Creation Tools</h3>
+      <ul>
+        <li>Draft emails and documents</li>
+        <li>Summarize long content</li>
+        <li>Rewrite for tone and clarity</li>
+      </ul>
+      <p class="notes">Copilot helps you write faster and more effectively—perfect for reports, emails, and proposals.</p>
+    </section>
+    <section class="slide blue">
+      <h3>Visual & File Capabilities</h3>
+      <ul>
+        <li>Generate images from prompts</li>
+        <li>Upload files for analysis</li>
+        <li>Extract insights from documents</li>
+      </ul>
+      <p class="notes">Copilot isn’t just for text—it can analyze files and generate visuals to support your work.</p>
+    </section>
+    <section class="slide purple">
+      <h3>Copilot in Microsoft 365 Apps</h3>
+      <ul>
+        <li>Summarize emails and draft replies</li>
+        <li>Analyze data and create charts</li>
+        <li>Generate reports and documents</li>
+      </ul>
+      <p class="notes">Copilot Pro integrates directly into your favorite Microsoft apps.</p>
+    </section>
+    <section class="slide blue">
+      <h3>Privacy & Settings</h3>
+      <ul>
+        <li>Adjust privacy settings</li>
+        <li>Clear chat history</li>
+        <li>Understand data usage</li>
+      </ul>
+      <p class="notes">You're in control—Copilot offers transparency and data management tools.</p>
+    </section>
+    <section class="slide purple">
+      <h3>Real-World Use Cases</h3>
+      <ul>
+        <li>Project planning and task lists</li>
+        <li>Meeting summaries and follow-ups</li>
+        <li>Data-driven decision-making</li>
+      </ul>
+      <p class="notes">Copilot adapts to your workflow and saves time.</p>
+    </section>
+    <section class="slide blue">
+      <h3>AI Tools Overview</h3>
+      <ul>
+        <li>ChatGPT — AI for writing, explanations, creativity</li>
+        <li>Notebook LM — AI Notebooks for learning & research</li>
+        <li>Google Gemini — multimodal AI for text, images & reasoning</li>
+        <li>Microsoft Copilot — productivity assistant</li>
+        <li>Perplexity AI — AI search with citations</li>
+        <li>Git & GitHub — version control & collaboration tools</li>
+      </ul>
+      <p class="notes">This slide highlights additional tools in the SIA curriculum.</p>
+    </section>
+    <section class="slide purple">
+      <h3>Final Takeaways</h3>
+      <ul>
+        <li>Embrace AI for everyday tasks</li>
+        <li>Practice prompt writing</li>
+        <li>Explore Copilot in your favorite apps</li>
+      </ul>
+      <p class="notes">Start small, experiment, and let Copilot support your productivity.</p>
+    </section>
+
+    <!-- Recordings section -->
+    <section class="recordings-section">
+      <h2 class="section-title">Microsoft Copilot Recorded Sessions</h2>
+      <div class="cards">
+        <!-- Card 1 -->
+        <article class="record-card">
+          <div class="thumb">Ages 5–8</div>
+          <h3 class="record-title">Copilot — Ages 5–8</h3>
+          <p class="record-desc">Story-led introduction to AI concepts using playful examples and simple Microsoft tools.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn" onclick="openPurchase('Copilot — Ages 5–8', 35)">Buy</button>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="record-card">
+          <div class="thumb">Ages 9–11</div>
+          <h3 class="record-title">Copilot — Ages 9–11</h3>
+          <p class="record-desc">Project-based session: explore Microsoft Copilot features and mini tasks for learners.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn" onclick="openPurchase('Copilot — Ages 9–11', 35)">Buy</button>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="record-card">
+          <div class="thumb">Ages 12–16</div>
+          <h3 class="record-title">Copilot — Ages 12–16</h3>
+          <p class="record-desc">Hands-on practical examples, including prompt writing and workflow demos.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn" onclick="openPurchase('Copilot — Ages 12–16', 35)">Buy</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="index.html" class="cta-button">← Back to Home</a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button style="float:right;border:none;background:transparent;font-size:16px;cursor:pointer" aria-label="Close" onclick="closeModal()">✕</button>
+      <h3 id="modal-title">Buy recording</h3>
+      <p class="note" id="modal-note">Complete purchase to get access to the recording and materials.</p>
+      <form id="purchase-form" onsubmit="return handlePurchase(event)">
+        <div class="field">
+          <label for="recording-name">Recording</label>
+          <input id="recording-name" name="recording-name" readonly />
+        </div>
+        <div class="field">
+          <label for="buyer-email">Your email</label>
+          <input id="buyer-email" name="buyer-email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label for="price">Price</label>
+          <input id="price" name="price" readonly />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn">Buy $<span id="modal-price">35</span></button>
+        </div>
+        <p class="note" style="margin-top:10px">We will send the streaming and download link to the email entered above.</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const recordingInput = document.getElementById('recording-name');
+    const priceInput = document.getElementById('price');
+    const modalPriceSpan = document.getElementById('modal-price');
+    const toast = document.getElementById('toast');
+
+    function openPurchase(title, price){
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+      modalTitle.textContent = 'Buy: ' + title;
+      recordingInput.value = title;
+      priceInput.value = '$' + price.toFixed(2);
+      modalPriceSpan.textContent = price.toFixed(2);
+    }
+    function closeModal(){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+      document.getElementById('purchase-form').reset();
+    }
+    function showToast(msg, ms=3500){
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(()=>{ toast.style.display='none'; }, ms);
+    }
+    function handlePurchase(e){
+      e.preventDefault();
+      const email = document.getElementById('buyer-email').value.trim();
+      const recording = recordingInput.value;
+      const price = modalPriceSpan.textContent;
+      if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        alert('Please enter a valid email.');
+        return false;
+      }
+      closeModal();
+      showToast('Purchase confirmed — an email with access details will be sent to ' + email);
+      setTimeout(()=>{
+        const blob = new Blob(
+          ["This is a placeholder file for " + recording + "\n(Replace with real video or download link from your server)."],
+          {type:'text/plain'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = recording.replace(/\s+/g,'_') + '_access_instructions.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      },700);
+      return false;
+    }
+  </script>
+</body>
+</html>
