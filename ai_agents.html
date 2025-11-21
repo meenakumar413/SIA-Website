@@ -5,39 +5,59 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AI Agents | Skills and Innovation Academy (SIA)</title>
   <link rel="stylesheet" href="sia-style.css" />
+
   <style>
-    /* Small helper styles so recordings match slide look */
-    .recordings-wrap { max-width: 1100px; margin: 24px auto 80px; padding: 0 20px; }
-    .recordings-grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .record-slide {
-      border-radius: 14px;
-      padding: 26px;
-      color: #fff;
-      cursor: pointer;
-      transition: transform .18s, box-shadow .18s;
-      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    :root{
+      --bg1:#5b21b6; /* purple */
+      --bg2:#0ea5e9; /* blue */
+      --muted:#e0e0e0;
+      --accent:#8b5cf6;
     }
-    .record-slide:hover { transform: translateY(-6px); background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); }
-    .record-thumb { height: 140px; border-radius: 10px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px; margin-bottom:14px; background: linear-gradient(90deg,#8b5cf6,#2575fc); }
-    .record-title { font-size:18px; margin:0 0 8px; }
-    .record-desc { font-size:14px; opacity:0.92; margin:0 0 12px; }
-    .record-meta { font-size:13px; opacity:0.85; }
-    .price-pill { display:inline-block; margin-top:10px; background:#fff; color:#2575fc; padding:8px 12px; border-radius:8px; font-weight:700; }
-    /* Modal */
-    #recording-modal { display:none; position:fixed; inset:0; background: rgba(2,6,23,0.6); z-index:2000; align-items:center; justify-content:center; }
-    #recording-modal .modal-card { background:#fff; color:#111; max-width:420px; width:92%; padding:20px; border-radius:12px; box-shadow:0 30px 80px rgba(2,6,23,0.4); text-align:center; }
-    .modal-close { display:inline-block; margin-top:14px; padding:10px 14px; background:#2575fc; color:#fff; border-radius:8px; cursor:pointer; text-decoration:none; }
-    /* Make slide-style recording headers match slide colors */
-    .record-slide .record-thumb.small-purple { background: linear-gradient(135deg,#6a11cb,#8b5cf6); }
-    .record-slide .record-thumb.small-blue   { background: linear-gradient(135deg,#2575fc,#6a11cb); }
-    @media (max-width:560px){
-      .hero, .slides { margin-top:80px; padding-left:14px; padding-right:14px; }
+    body { color:#fff; }
+
+    /* --- Recordings cards styling (same as Generative AI page) --- */
+    .recordings-section { margin:50px 0; }
+    .section-title { font-size:22px; font-weight:700; margin-bottom:20px; color:#fff; text-align:center; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+
+    .record-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border-radius:16px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      cursor:pointer;
+      transition:0.3s;
     }
+    .record-card:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+    }
+
+    .thumb {
+      height:140px;
+      border-radius:12px;
+      background: linear-gradient(90deg, var(--accent), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:18px;
+    }
+
+    .record-title { font-size:16px; font-weight:700; margin:0; }
+    .record-desc { font-size:14px; color: var(--muted); }
+
+    .price-row { display:flex; justify-content:space-between; align-items:center; margin-top:auto; }
+    .price { font-weight:800; font-size:18px; color:#fff; }
+
+    .btn { padding:10px 14px; border:none; border-radius:10px; cursor:pointer; font-weight:600; background:#fff; color:#5b21b6; }
   </style>
 </head>
 
 <body>
+  <!-- Navbar -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
@@ -57,172 +77,152 @@
     </nav>
   </header>
 
+  <!-- PAGE CONTENT -->
   <main class="slides" style="margin-top:110px;">
-    <!-- Slide-styled sections matching Generative AI page -->
+
+    <!-- Slides (styled exactly like Generative AI page) -->
     <section class="slide purple">
       <h2>AI Agents: Learn the Fundamentals First</h2>
-      <p>Mastering fundamentals is essential before building reliable AI agents.</p>
+      <p>Understanding fundamentals is essential before building reliable AI agents.</p>
     </section>
 
     <section class="slide blue">
       <h3>Why Fundamentals Matter</h3>
       <ul>
-        <li>AI agents rely on foundational concepts</li>
-        <li>Skipping fundamentals leads to confusion</li>
-        <li>Learn before you build</li>
+        <li>AI agents rely on strong foundational AI concepts</li>
+        <li>Skipping basics leads to inconsistent or broken agents</li>
+        <li>Learn before you build for long-term success</li>
       </ul>
-      <p class="notes">Many developers rush into building agents without understanding how LLMs work. This slide sets the stage for why that’s risky.</p>
+      <p class="notes">This highlights why rushing into agents without core AI knowledge can lead to confusion.</p>
     </section>
 
     <section class="slide purple">
       <h3>How LLMs Work</h3>
       <ul>
         <li>LLMs generate responses using tokens</li>
-        <li>Context windows define memory scope</li>
-        <li>Prompt structure affects output</li>
+        <li>Context windows determine memory limits</li>
+        <li>Prompt structure shapes output quality</li>
       </ul>
-      <p class="notes">LLMs process inputs as tokens. Understanding context windows helps you design better prompts and manage memory.</p>
+      <p class="notes">Understanding tokens and context helps design better agents.</p>
     </section>
 
     <section class="slide blue">
       <h3>Embeddings & Vectors</h3>
       <ul>
-        <li>Embeddings turn words into numbers</li>
+        <li>Embeddings convert text into numerical meaning</li>
         <li>Vectors enable semantic search</li>
-        <li>Used in AI memory and retrieval</li>
+        <li>Used in agent memory and RAG systems</li>
       </ul>
-      <p class="notes">Embeddings are the backbone of semantic understanding. They allow AI to “remember” and “search” intelligently.</p>
+      <p class="notes">Embeddings allow agents to “understand” and store knowledge.</p>
     </section>
 
     <section class="slide purple">
       <h3>LangChain Overview</h3>
       <ul>
-        <li>LangChain connects LLMs to tools</li>
-        <li>Modular components for workflows</li>
-        <li>Ideal for building agents</li>
+        <li>Connects LLMs to tools</li>
+        <li>Provides modular components</li>
+        <li>Designed for building powerful agents</li>
       </ul>
-      <p class="notes">LangChain is a powerful framework that lets you build agents by chaining together prompts, tools, and memory.</p>
+      <p class="notes">LangChain is one of the most widely used agent frameworks.</p>
     </section>
 
     <section class="slide blue">
-      <h3>Practice Labs – API Calls</h3>
+      <h3>Practice Labs — API Calls</h3>
       <ul>
         <li>Make your first API call</li>
         <li>Understand request/response flow</li>
-        <li>Build confidence with real data</li>
+        <li>Build confidence using real data</li>
       </ul>
-      <p class="notes">KodeKloud walks through making an OpenAI API call. This is your first step toward building functional agents.</p>
+      <p class="notes">Hands-on practice helps learners build real agent skills.</p>
     </section>
 
     <section class="slide purple">
       <h3>Prompt Engineering</h3>
       <ul>
-        <li>Use zero-shot and few-shot prompts</li>
-        <li>Chain-of-thought improves reasoning</li>
-        <li>Test and iterate for clarity</li>
+        <li>Zero-shot and few-shot prompting</li>
+        <li>Chain-of-thought for better reasoning</li>
+        <li>Iterative prompt testing</li>
       </ul>
-      <p class="notes">Prompt engineering is an art. Learn how to guide the model’s thinking with structured inputs.</p>
+      <p class="notes">Prompt frameworks dramatically improve agent performance.</p>
     </section>
 
     <section class="slide blue">
       <h3>Vector Databases & RAG</h3>
       <ul>
-        <li>Tools like ChromaDB and Pinecone</li>
+        <li>Tools: Pinecone, ChromaDB</li>
         <li>Store and retrieve embeddings</li>
-        <li>Retrieve-Augmented Generation (RAG) systems</li>
+        <li>Build strong AI memory systems</li>
       </ul>
-      <p class="notes">Vector DBs and RAG are essential for scalable and accurate agent memory + document Q&A.</p>
+      <p class="notes">RAG improves accuracy and lets agents access knowledge safely.</p>
     </section>
 
     <section class="slide purple">
       <h3>LangGraph & MCP</h3>
       <ul>
         <li>LangGraph for multi-step workflows</li>
-        <li>MCP to connect models to external tools</li>
-        <li>Design stateful and reliable agents</li>
+        <li>MCP connects agents to external tools</li>
+        <li>Build stateful, reliable agent systems</li>
       </ul>
-      <p class="notes">LangGraph visualizes multi-step logic, and MCP enables real-world actions for agents.</p>
+      <p class="notes">These tools power advanced, multi-action agents.</p>
     </section>
 
     <section class="slide blue">
       <h3>Final Takeaways</h3>
       <ul>
-        <li>Learn fundamentals before tools</li>
-        <li>Practice with real labs</li>
-        <li>Create scalable, intelligent agents</li>
+        <li>Start with fundamentals</li>
+        <li>Practice with guided labs</li>
+        <li>Build smart, scalable AI agents</li>
       </ul>
-      <p class="notes">Build your foundation, then scale your agent development.</p>
+      <p class="notes">Strong fundamentals create strong agents.</p>
+    </section>
+
+    <!-- Recordings Section -->
+    <section class="recordings-section">
+      <h2 class="section-title">AI Agents — Recorded Sessions</h2>
+
+      <div class="cards">
+
+        <!-- Ages 5–8 -->
+        <article class="record-card">
+          <div class="thumb">Ages 5–8</div>
+          <h3 class="record-title">AI Agents — Ages 5–8</h3>
+          <p class="record-desc">Story-based intro to agents with fun, teacher-led activities.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+        <!-- Ages 9–11 -->
+        <article class="record-card">
+          <div class="thumb">Ages 9–11</div>
+          <h3 class="record-title">AI Agents — Ages 9–11</h3>
+          <p class="record-desc">Project-focused session covering simple agent workflows.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+        <!-- Ages 12–16 -->
+        <article class="record-card">
+          <div class="thumb">Ages 12–16</div>
+          <h3 class="record-title">AI Agents — Ages 12–16</h3>
+          <p class="record-desc">Guided coding demo and beginner-friendly agent building.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+      </div>
     </section>
 
     <!-- Back button -->
-    <section class="back-home" style="text-align:center; margin:30px 0;">
-      <a href="index.html" class="cta-button">← Back to Home</a>
+    <section class="back-home">
+      <a href="index.html" class="cta-button">Back to Home</a>
     </section>
+
   </main>
-
-  <!-- Recordings section styled as slide-like cards -->
-  <div class="recordings-wrap">
-    <h2 style="color:#fff; text-align:center; margin:18px 0 12px;">AI Agents — Recordings ($35 each)</h2>
-    <div class="recordings-grid">
-      <div class="record-slide" onclick="openRecordingModal('AI Agents — Ages 5–8')">
-        <div class="record-thumb small-purple">Ages 5–8</div>
-        <h3 class="record-title">AI Agents — Ages 5–8</h3>
-        <p class="record-desc">Story-led intro to agents with playful examples (teacher-led).</p>
-        <div class="record-meta">Duration: ~45 mins • Activity sheet included</div>
-        <span class="price-pill">$35</span>
-      </div>
-
-      <div class="record-slide" onclick="openRecordingModal('AI Agents — Ages 9–11')">
-        <div class="record-thumb small-blue">Ages 9–11</div>
-        <h3 class="record-title">AI Agents — Ages 9–11</h3>
-        <p class="record-desc">Project-focused session covering simple agent tasks and experiments.</p>
-        <div class="record-meta">Duration: ~50 mins • Mini-project files</div>
-        <span class="price-pill">$35</span>
-      </div>
-
-      <div class="record-slide" onclick="openRecordingModal('AI Agents — Ages 12–16')">
-        <div class="record-thumb small-purple">Ages 12–16</div>
-        <h3 class="record-title">AI Agents — Ages 12–16</h3>
-        <p class="record-desc">Guided coding demo and agent workflows — beginner-friendly coding.</p>
-        <div class="record-meta">Duration: ~60 mins • Code notebook included</div>
-        <span class="price-pill">$35</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="recording-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card">
-      <h3 id="modal-recording-title">Recording</h3>
-      <p>This recording is $35. Payment integration can be added later.</p>
-      <a class="modal-close" role="button" onclick="closeRecordingModal()">Close</a>
-    </div>
-  </div>
-
-  <footer style="text-align:center; padding:28px 0; color:#fff;">
-    © 2025 Skills and Innovation Academy (SIA) | contact.siaacademy@gmail.com
-  </footer>
-
-  <script>
-    function openRecordingModal(title){
-      document.getElementById('modal-recording-title').innerText = title;
-      const modal = document.getElementById('recording-modal');
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden','false');
-    }
-    function closeRecordingModal(){
-      const modal = document.getElementById('recording-modal');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-    }
-
-    // Accessibility: close modal on Escape
-    document.addEventListener('keydown', function(e){
-      const modal = document.getElementById('recording-modal');
-      if(e.key === 'Escape' && modal.style.display === 'flex'){
-        closeRecordingModal();
-      }
-    });
-  </script>
 </body>
 </html>
