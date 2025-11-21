@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generative AI – Event Recordings</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .recordings-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .recording-card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .recording-card:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .price-tag {
+      margin-top: 10px;
+      display: inline-block;
+      background: #fff;
+      color: #2575fc;
+      padding: 6px 12px;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #333;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .close-btn {
+      background: #2575fc;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <header>Generative AI – Event Recordings</header>
+
+  <div class="recordings-container">
+
+    <div class="recording-card" onclick="openModal('Generative AI — Ages 5–8')">
+      <h2>Generative AI — Ages 5–8</h2>
+      <p>Full workshop recording</p>
+      <span class="price-tag">$35</span>
+    </div>
+
+    <div class="recording-card" onclick="openModal('Generative AI — Ages 9–11')">
+      <h2>Generative AI — Ages 9–11</h2>
+      <p>Full workshop recording</p>
+      <span class="price-tag">$35</span>
+    </div>
+
+    <div class="recording-card" onclick="openModal('Generative AI — Ages 12–16')">
+      <h2>Generative AI — Ages 12–16</h2>
+      <p>Full workshop recording</p>
+      <span class="price-tag">$35</span>
+    </div>
+
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title"></h2>
+      <p>This recording is $35. Payment integration can be added later.</p>
+      <div class="close-btn" onclick="closeModal()">Close</div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title) {
+      document.getElementById("modal-title").innerText = title;
+      document.getElementById("modal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
