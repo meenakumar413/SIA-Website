@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prompt Engineering | Skills and Innovation Academy (SIA)</title>
+  <link rel="stylesheet" href="sia-style.css" />
+
+  <style>
+    :root{
+      --bg1:#5b21b6;
+      --bg2:#0ea5e9;
+      --muted:#e0e0e0;
+      --accent:#8b5cf6;
+    }
+    body { color:#fff; }
+
+    .recordings-section { margin:50px 0; }
+    .section-title { font-size:22px; font-weight:700; margin-bottom:20px; color:#fff; text-align:center; }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .record-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border-radius:16px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .record-card:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+    }
+
+    .thumb {
+      height:140px;
+      border-radius:12px;
+      background: linear-gradient(90deg, var(--accent), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:18px;
+    }
+
+    .record-title { font-size:16px; font-weight:700; }
+    .record-desc { font-size:14px; color:var(--muted); }
+
+    .price-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:auto;
+    }
+
+    .price {
+      font-weight:800;
+      font-size:18px;
+      color:#fff;
+    }
+
+    .btn {
+      padding:10px 14px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      background:#fff;
+      color:#5b21b6;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+      <ul class="nav-links">
+        <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+        <li><a href="generative_ai.html">Generative AI</a></li>
+        <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+        <li><a href="ai_agents.html">AI Agents</a></li>
+        <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+        <li><a href="prompt_engineering.html" class="active">Prompt Engineering</a></li>
+        <li><a href="ethics_ai.html">Ethics in AI</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="financial_literacy.html">Financial Literacy</a></li>
+        <li><a href="ai_tools.html">AI Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>   
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Slides -->
+  <main class="slides" style="margin-top:110px;">
+
+    <section class="slide purple">
+      <h2>Prompt Engineering Essentials</h2>
+      <p>Welcome! This presentation explores the foundations and advanced techniques of prompt engineering.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Course Structure</h3>
+      <ul>
+        <li>Fundamentals of prompting</li>
+        <li>Iteration techniques</li>
+        <li>Multimodal and advanced prompts</li>
+        <li>AI agent design</li>
+      </ul>
+      <p class="notes">The course builds from fundamentals to advanced AI workflows.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Prompting Fundamentals</h3>
+      <ul>
+        <li>Clear, specific instructions yield better results</li>
+        <li>Use system messages to guide tone and behavior</li>
+        <li>Understand token limits and context windows</li>
+      </ul>
+      <p class="notes">Prompting is both a science and an art—clarity and structure matter.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Iteration Methods</h3>
+      <ul>
+        <li>Chain-of-thought prompting</li>
+        <li>Self-reflection and critique</li>
+        <li>Rewriting and refining outputs</li>
+      </ul>
+      <p class="notes">Iteration improves accuracy, structure, and problem-solving depth.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Multimodal Prompting</h3>
+      <ul>
+        <li>Combine text with images or code</li>
+        <li>Use visual cues to guide generation</li>
+        <li>Ideal for design, analysis, and education</li>
+      </ul>
+      <p class="notes">Multimodal prompts unlock new creative and technical capabilities.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Everyday Use Cases</h3>
+      <ul>
+        <li>Writing emails and summaries</li>
+        <li>Brainstorming ideas</li>
+        <li>Creating presentations and visuals</li>
+      </ul>
+      <p class="notes">Prompting is a productivity superpower for all learners and professionals.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>Data & Presentation Prompts</h3>
+      <ul>
+        <li>Ask for charts, tables, and summaries</li>
+        <li>Use structured prompts for clarity</li>
+        <li>Ideal for business, academic, and research settings</li>
+      </ul>
+      <p class="notes">AI excels at simplifying information into visual and digestible formats.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Advanced Techniques</h3>
+      <ul>
+        <li>Role-based prompting</li>
+        <li>Multi-step reasoning</li>
+        <li>Tool use and external memory</li>
+      </ul>
+      <p class="notes">These strategies enable powerful AI-driven workflows and automation.</p>
+    </section>
+
+    <section class="slide purple">
+      <h3>AI Agent Design</h3>
+      <ul>
+        <li>Use Model Context Protocol (MCP)</li>
+        <li>Connect to external tools</li>
+        <li>Design for autonomy and reliability</li>
+      </ul>
+      <p class="notes">Effective prompts + tool access = fully functional AI agents.</p>
+    </section>
+
+    <section class="slide blue">
+      <h3>Final Quiz & Takeaways</h3>
+      <ul>
+        <li>Review key concepts</li>
+        <li>Apply them in real projects</li>
+        <li>Keep experimenting and learning</li>
+      </ul>
+      <p class="notes">A final quiz reinforces the essential skills learned in this course.</p>
+    </section>
+
+    <!-- Recordings Section -->
+    <section class="recordings-section">
+      <h2 class="section-title">Prompt Engineering Recorded Sessions</h2>
+
+      <div class="cards">
+
+        <article class="record-card">
+          <div class="thumb">Ages 5–8</div>
+          <h3 class="record-title">Prompt Engineering — Ages 5–8</h3>
+          <p class="record-desc">Simple examples and guided activities introducing prompt basics.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+        <article class="record-card">
+          <div class="thumb">Ages 9–11</div>
+          <h3 class="record-title">Prompt Engineering — Ages 9–11</h3>
+          <p class="record-desc">Hands-on tasks to build understanding of structured prompts.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+        <article class="record-card">
+          <div class="thumb">Ages 12–16</div>
+          <h3 class="record-title">Prompt Engineering — Ages 12–16</h3>
+          <p class="record-desc">Advanced techniques with real-world examples and practice prompts.</p>
+          <div class="price-row">
+            <div class="price">$35</div>
+            <button class="btn">Buy</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="back-home">
+      <a href="index.html" class="cta-button">Back to Home</a>
+    </section>
+
+  </main>
+</body>
+</html>
