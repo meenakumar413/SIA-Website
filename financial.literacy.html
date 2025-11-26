@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Financial Literacy | Skills and Innovation Academy (SIA)</title>
+  <link rel="stylesheet" href="sia-style.css" />
+
+<style>
+/* --- Recordings cards styling --- */
+:root{
+  --bg1:#5b21b6; /* purple */
+  --bg2:#0ea5e9; /* blue */
+  --muted:#e0e0e0;
+  --accent:#8b5cf6;
+}
+body { color:#fff; }
+
+.recordings-section {
+  margin: 50px 0;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 20px;
+}
+
+.record-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.record-card:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+}
+
+.thumb {
+  height: 140px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--accent), var(--bg2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.record-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.record-desc {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price {
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #fff;
+  color: #5b21b6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="sia-logo.png" alt="SIA Logo"></a>
+    <ul class="nav-links">
+      <li><a href="ai_fundamentals.html">AI Fundamentals</a></li>
+      <li><a href="generative_ai.html">Generative AI</a></li>
+      <li><a href="microsoft_copilot.html">Microsoft Copilot</a></li>
+      <li><a href="ai_agents.html">AI Agents</a></li>
+      <li><a href="foundational_ai_concepts.html">Foundational AI Concepts</a></li>
+      <li><a href="prompt_engineering.html">Prompt Engineering</a></li>
+      <li><a href="ethics_ai.html">Ethics in AI</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="financial_literacy.html" class="active">Financial Literacy</a></li>
+      <li><a href="ai_tools.html">AI Tools</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Slides -->
+<main class="slides" style="margin-top:110px;">
+
+  <section class="slide purple">
+    <h2>Basic Financial Concepts</h2>
+    <p>Welcome! This deck introduces essential financial concepts that empower individuals to manage money wisely and build long-term wealth.</p>
+  </section>
+
+  <section class="slide blue">
+    <h3>The Foundation of Smart Decisions</h3>
+    <ul>
+      <li>Helps avoid debt and financial stress</li>
+      <li>Enables informed investing and saving</li>
+      <li>Builds confidence in money management</li>
+    </ul>
+    <p class="notes">Financial literacy is a life skill—understanding the basics can transform your future.</p>
+  </section>
+
+  <section class="slide purple">
+    <h3>Income vs. Expenses</h3>
+    <ul>
+      <li>Income: money you earn</li>
+      <li>Expenses: money you spend</li>
+      <li>Goal: spend less than you earn</li>
+    </ul>
+    <p class="notes">Track your income and expenses to stay in control and avoid overspending.</p>
+  </section>
+
+  <section class="slide blue">
+    <h3>Budgeting Basics</h3>
+    <ul>
+      <li>Create a monthly budget</li>
+      <li>Allocate for needs, wants, and savings</li>
+      <li>Use tools like spreadsheets or apps</li>
+    </ul>
+    <p class="notes">A budget is your financial roadmap—stick to it to reach your goals.</p>
+  </section>
+
+  <section class="slide purple">
+    <h3>Saving & Emergency Funds</h3>
+    <ul>
+      <li>Save at least 10–20% of your income</li>
+      <li>Build an emergency fund (3–6 months of expenses)</li>
+      <li>Automate savings if possible</li>
+    </ul>
+    <p class="notes">Saving regularly builds security and opens doors to future opportunities.</p>
+  </section>
+
+  <section class="slide blue">
+    <h3>Investing Essentials</h3>
+    <ul>
+      <li>Start early to benefit from compound interest</li>
+      <li>Diversify across stocks, bonds, and funds</li>
+      <li>Understand risk vs. reward</li>
+    </ul>
+    <p class="notes">Investing is key to long-term wealth—learn the basics before jumping in.</p>
+  </section>
+
+  <section class="slide purple">
+    <h3>Credit & Debt</h3>
+    <ul>
+      <li>Credit scores affect loans and interest rates</li>
+      <li>Pay off high-interest debt first</li>
+      <li>Avoid unnecessary borrowing</li>
+    </ul>
+    <p class="notes">Credit can be helpful or harmful—manage it carefully to protect your financial health.</p>
+  </section>
+
+  <section class="slide blue">
+    <h3>Financial Goals</h3>
+    <ul>
+      <li>Short-term: emergency fund, debt payoff</li>
+      <li>Medium-term: travel and education</li>
+      <li>Long-term: retirement and home ownership</li>
+    </ul>
+    <p class="notes">Define your goals and align your budget and investments to achieve them.</p>
+  </section>
+
+  <section class="slide purple">
+    <h3>Final Takeaways</h3>
+    <ul>
+      <li>Learn continuously</li>
+      <li>Make informed decisions</li>
+      <li>Share knowledge with others</li>
+    </ul>
+    <p class="notes">Financial literacy is a journey—start today and grow your confidence with every step.</p>
+  </section>
+
+  <!-- Recordings section -->
+  <section class="recordings-section">
+    <h2 class="section-title">Financial Literacy Recorded Sessions</h2>
+
+    <div class="cards">
+
+      <article class="record-card">
+        <div class="thumb">Ages 5–8</div>
+        <h3 class="record-title">Financial Literacy — Ages 5–8</h3>
+        <p class="record-desc">Fun introduction to money, saving habits, and simple real-life scenarios.</p>
+        <div class="price-row">
+          <div class="price">$35</div>
+          <button class="btn">Buy</button>
+        </div>
+      </article>
+
+      <article class="record-card">
+        <div class="thumb">Ages 9–11</div>
+        <h3 class="record-title">Financial Literacy — Ages 9–11</h3>
+        <p class="record-desc">Budgeting basics and small projects to practice smart money decisions.</p>
+        <div class="price-row">
+          <div class="price">$35</div>
+          <button class="btn">Buy</button>
+        </div>
+      </article>
+
+      <article class="record-card">
+        <div class="thumb">Ages 12–16</div>
+        <h3 class="record-title">Financial Literacy — Ages 12–16</h3>
+        <p class="record-desc">Investing foundations, credit awareness, and real financial planning.</p>
+        <div class="price-row">
+          <div class="price">$35</div>
+          <button class="btn">Buy</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="back-home">
+    <a href="index.html" class="cta-button">Back to Home</a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Skills and Innovation Academy (SIA) | contact.siaacademy@gmail.com</p>
+</footer>
+
+</body>
+</html>
