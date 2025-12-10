@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIA Homework Submission Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a00ff, #00b8ff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px 40px;
+      width: 400px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container img {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 120px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      background-color: #ffffff;
+      color: #6a00ff;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .submit-btn:hover {
+      background-color: #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <!-- Replace SIA-logo.png with your actual logo file path -->
+    <img src="SIA-logo.png" alt="SIA Logo" />
+
+    <h2>Homework Submission</h2>
+
+    <form>
+      <label for="studentName">Student Name</label>
+      <input type="text" id="studentName" name="studentName" required />
+
+      <label for="gradeLevel">Grade Level</label>
+      <select id="gradeLevel" name="gradeLevel" required>
+        <option value="">Select grade</option>
+        <option>Grade 1</option>
+        <option>Grade 2</option>
+        <option>Grade 3</option>
+        <option>Grade 4</option>
+        <option>Grade 5</option>
+        <option>Grade 6</option>
+        <option>Grade 7</option>
+        <option>Grade 8</option>
+        <option>Grade 9</option>
+        <option>Grade 10</option>
+        <option>Grade 11</option>
+        <option>Grade 12</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required />
+
+      <label for="fileUpload">Upload Homework File</label>
+      <input type="file" id="fileUpload" name="fileUpload" required />
+
+      <label for="comments">Comments (optional)</label>
+      <textarea id="comments" name="comments" rows="3"></textarea>
+
+      <button type="submit" class="submit-btn">Submit Homework</button>
+    </form>
+  </div>
+</body>
+</html>
